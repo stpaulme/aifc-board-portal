@@ -72,7 +72,7 @@
             "label": "Contact",
             "name": "contact",
             "aria-label": "",
-            "type": "post_object",
+            "type": "email",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -81,15 +81,10 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "staff"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1,
-            "bidirectional_target": []
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -109,6 +104,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "show_in_rest": false,
-    "modified": 1699476877
+    "show_in_rest": 0,
+    "modified": 1699479148
 }

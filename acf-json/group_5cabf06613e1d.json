@@ -83,64 +83,11 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_5f4539cbcbd4a": {
-                    "key": "layout_5f4539cbcbd4a",
-                    "name": "eligibility",
-                    "label": "Eligibility",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5f453a5ab1342",
-                            "label": "Note",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "Always shown above sidebar navigation",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
-                        },
-                        {
-                            "key": "field_5f4539d7cbd4b",
-                            "label": "Eligibility",
-                            "name": "eligibility",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_5f452edb3380f",
-                                "field_5f45363c81bab",
-                                "field_5f4530a8387fb",
-                                "field_5f453114dd3f7"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
-            "button_label": "Add Module",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Module"
         },
         {
             "key": "field_5ce4a7022265a",
@@ -220,38 +167,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_5ce4a719883ab": {
-                    "key": "layout_5ce4a719883ab",
-                    "name": "form",
-                    "label": "Form",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ce4b8204fcc6",
-                            "label": "Form",
-                            "name": "form",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5ce40bf7c5d70"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "min": "",
@@ -282,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699476535
+    "modified": 1699479006
 }

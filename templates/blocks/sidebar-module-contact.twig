@@ -19,10 +19,10 @@
 			</div>
 		{% endif %}
 
-		{% set contact = Post(module.contact) %}
+		{% set contact = module.contact %}
 		{% if contact %}
 			<div class="sidebar-contact__contact">
-				{% include 'blocks/member.twig' with { 'post' : contact, 'show_title' : true } %}
+				<a href="mailto:{{ contact }}">{{ contact }}</a>
 			</div>
 		{% endif %}
 	</div>
