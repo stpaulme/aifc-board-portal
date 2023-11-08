@@ -1,0 +1,28 @@
+{% set floral_motif = Image(post.meta('floral_motif')) %}
+
+<div class="title-page {{ title_modifier ? 'title-page--'~title_modifier }}">
+    
+    {% if floral_motif.src %}
+        <div class="container" style="background-image: url('{{ floral_motif.src }}');">
+    {% else %}
+        <div class="container">
+    {% endif %}
+    
+            <div class="row">
+                <div class="col-md-10 col-lg-8">
+                    {% if show_date %}
+                        <span class="title-page__date">
+                            {{ post.date|date('F Y') }}
+                        </span>
+                    {% endif %}
+                    
+                    <h1 class="title-page__heading">{{ title }}</h1>
+                </div>
+            </div>
+    
+        </div>
+</div>
+
+{% if breadcrumbs %}
+    {% include 'blocks/breadcrumbs.twig' %}
+{% endif %}

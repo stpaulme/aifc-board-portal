@@ -1,0 +1,31 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	{% if module.heading %}
+		<h2 class="team__heading">{{ module.heading }}</h2>
+	{% endif %}
+	
+	{% if module.subheading %}
+		<h3 class="team__subheading">{{ module.subheading }}</h3>
+  {% endif %}
+
+	{% if module.members|length > 0 %}
+		<div class="row">
+			{% for post in Post(module.members) %}
+				<div class="col-md-6 col-lg-4 team__col">
+					<div class="team__member">
+						{% include 'blocks/member.twig' with { 'show_thumbnail' : true, 'show_title' : true } %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	
+	{% if module.show_link %}
+		<div class="team__link">
+			<a class="button" href="/about/staff">Full Staff Listing</a>
+		</div>
+	{% endif %}
+
+{% endblock %}

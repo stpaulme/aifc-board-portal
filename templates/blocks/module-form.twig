@@ -1,0 +1,23 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-lg-10 offset-lg-1">
+            
+            {% if module.heading %}
+                <h2 class="form__heading">{{ module.heading }}</h2>
+            {% endif %}
+
+            {% if module.form_id %}
+                {% filter shortcodes %}
+                    [gravityform id={{module.form_id}} title=false description=false ajax=true]
+                {% endfilter %}
+            {% endif %}
+
+        </div>
+        
+    </div>
+
+{% endblock %}

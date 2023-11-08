@@ -1,0 +1,38 @@
+<div class="member">
+    {% if show_thumbnail == true %}
+        {% if post.thumbnail %}
+            <img class="member__image" src="{{ post.thumbnail.src('square') }}">
+		{% endif %}
+    {% endif %}
+
+    <div class="member__content">
+        {% if show_title == true %}
+            <h4 class="member__name">
+                <a href="{{ post.link }}">
+                    {{ post.title }}
+                </a>
+            </h4>
+        {% endif %}
+    
+        {% if post.meta('position') %}
+            <span class="member__position">{{ post.meta('position') }}</span>
+        {% endif %}
+    
+        {% if post.meta('email') %}
+            <a class="member__email" href="mailto:{{ post.meta('email') }}">{{ post.meta('email') }}</a>
+        {% endif %}
+    
+        {% if post.meta('phone') %}
+            <a
+                class="member__phone"
+                href="tel:{{ post.meta('phone') }}{{ post.meta('extension') ? ';'~post.meta('extension') }}">
+                    {{ post.meta('phone') }}
+                    {{ post.meta('extension') ? ' ext. '~post.meta('extension') }}
+            </a>
+        {% endif %}
+    
+        {% if post.meta('tribal_affiliation') %}
+            <span class="member__tribal-affiliation">{{ post.meta('tribal_affiliation') }}</span>
+        {% endif %}
+    </div>
+</div>

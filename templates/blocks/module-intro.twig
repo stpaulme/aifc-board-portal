@@ -1,0 +1,35 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			{% if module.heading or module.subheading %}
+				<div class="intro__header">
+					{% if module.heading %}
+						<h2 class="intro__heading">{{ module.heading }}</h2>
+					{% endif %}
+
+					{% if module.subheading %}
+						<span class="intro__subheading">{{ module.subheading }}</span>
+					{% endif %}
+				</div>
+			{% endif %}
+
+			{% if module.copy %}
+				<div class="intro__copy">
+					{{ module.copy }}
+				</div>
+			{% endif %}
+
+			{% if module.links %}
+				<ul class="intro__links">
+					{% for item in module.links %}
+						<li class="intro__link"><a class="button" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

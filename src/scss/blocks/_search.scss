@@ -1,0 +1,26 @@
+.search {
+    display: flex;
+    flex-wrap: nowrap;
+
+    #search__toggle {
+        // Remove default button styles
+        background: none;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #search__form {
+        flex: 1;
+        margin-left: 15px;
+    }
+    
+    #search__field {
+        appearance: none;
+        border: 0;
+        padding: 0;
+        width: 8rem;
+    }
+}

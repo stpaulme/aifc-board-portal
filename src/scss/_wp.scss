@@ -1,0 +1,113 @@
+// WordPress
+
+.alignnone {
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.alignright {
+    border-radius: 5px;
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.alignleft {
+    border-radius: 5px;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 0 0 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    max-width: 100%; /* Image does not overflow the content area */
+    padding: 0;
+}
+
+.wp-caption.alignnone {
+    margin: 0 0 20px 0;
+    width: 100% !important;
+}
+
+.wp-caption.alignleft {
+    margin: 0 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 0 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    border-radius: 5px 5px 0 0;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+}
+
+.wp-caption .wp-caption-text {
+    background: $gray-border;
+    border-radius: 0 0 5px 5px;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.25;
+    padding: 15px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}

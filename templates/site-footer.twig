@@ -1,0 +1,79 @@
+{% set logo = Image(options.logo) %}
+
+<footer class="site-footer">
+    <div class="container">
+
+        {# Pattern #}
+        <div class="site-footer__pattern"></div>
+
+        <div class="row">
+
+            {# Newsletter/Menu/Contact/Social #}
+            <div class="col-md-10">
+                {% include 'blocks/newsletter-signup.twig' %}
+                
+                {% include 'blocks/nav.twig' with { 'menu' : menu_footer, 'modifier' : 'footer' } %}
+                
+                <div class="site-footer__contact-social">
+                    <dl class="site-footer__contact-list">
+                        {% if options.phone %}
+                            <dt class="site-footer__contact-term">Phone</dt>
+                            <dd class="site-footer__contact-def"><a href="tel:{{ options.phone }}">{{ options.phone }}</a></dd>
+                        {% endif %}
+                    
+                        {% if options.fax %}
+                            <dt class="site-footer__contact-term">Fax</dt>
+                            <dd class="site-footer__contact-def"><a href="tel:{{ options.fax }}">{{ options.fax }}</a></dd>
+                        {% endif %}
+
+                        {% if options.address %}
+                            <dt class="site-footer__contact-term">Address</dt>
+                            <dd class="site-footer__contact-def">
+                                <address class="site-footer__address">
+                                    {% if options.map_url %}
+                                        <a class="site-footer__map-url" href="{{ options.map_url }}" target="_blank">
+                                    {% endif %}
+                                        {{ options.address }}
+                                    {% if options.map_url %}
+                                        </a>
+                                    {% endif %}
+                                </address>
+                            </dd>
+                        {% endif %}
+                    </dl>
+                    
+                    {% if options.social_media %}
+                        <ul class="site-footer__social-list">
+                            {% for item in options.social_media %}
+                                <li class="site-footer__social-item">
+                                    <a class="site-footer__social-link" href="{{ item.link.url }}" target="{{ item.link.target }}" title="{{ item.link.title }}"></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+
+            {# Logo #}
+            <div class="col-md-2">
+                <a class="site-footer__logo-link" href="{{ site.url }}">
+                    <img alt="{{ site.title }} homepage" class="site-footer__logo" src="{{ logo.src }}">
+                </a>                
+            </div>
+
+            {# Copyright/Attribution #}
+            <div class="col-12 site-footer__colophon">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p class="site-footer__copyright">Copyright &copy; {{"now"|date('Y')}} {{ site.name }}. <a href="{{ site.url }}/data-privacy-policy/">Data Privacy Policy</a></p>
+                    </div>
+                    <div class="col-md-5">
+                        <p class="site-footer__attribution">Responsive Design by <a href="https://stpaulmedia.com" target="_blank">Saint Paul Media</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>

@@ -1,0 +1,57 @@
+.cta-pair {
+  padding: 40px 0;
+  background-color: $black;
+  color: $white;
+
+  .cta-pair__heading {
+    font-size: 1.625rem;
+    line-height: 1.15;
+    margin-bottom: 30px;
+  }
+  
+  .cta-pair__col {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .cta-pair {
+    padding: 0;
+    
+    .container {
+      background-image: url(../../dist/img/pattern_vertical.png);
+      background-position: top right 15px;
+      background-repeat: no-repeat;
+      background-size: 75px;
+      padding: 60px 0;
+    }
+
+    .cta-pair__heading {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 55px;
+    }
+
+    .cta-pair__col {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .cta-pair {
+    .cta-pair__heading {
+      font-size: 2.25rem;
+      line-height: 1.1111;
+      margin-bottom: 50px;
+    }
+
+    .cta-pair__col {
+      margin-bottom: 0;
+    }
+  }
+}

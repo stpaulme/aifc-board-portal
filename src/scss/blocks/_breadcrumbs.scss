@@ -1,0 +1,15 @@
+.breadcrumbs {
+  border-bottom: 2px solid $gray-border;
+  font-size: 0.875rem;
+  line-height: 1.15;
+  padding: 15px 0;
+
+  a {
+    color: inherit;
+    font-weight: 500;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

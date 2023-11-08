@@ -1,0 +1,10 @@
+<div class="search">
+    <button id="search__toggle" aria-label="Toggle Search Form">
+        <i class="fas fa-search" aria-hidden="true"></i>
+    </button>
+
+    <form role="search" method="get" action="{{ site.url }}" id="search__form">
+        <label class="sr-only" for="s">Search for:</label>
+        <input type="text" name="s" id="search__field" placeholder="Search Site" />
+    </form>
+</div>

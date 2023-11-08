@@ -1,0 +1,59 @@
+<div class="cta">
+
+    {% set image = Image(cta.image) %}
+
+    {% if module.image_position %}
+        <div class="row">
+    {% endif %}
+
+        {% if image.src %}
+            {% if module.image_position %}
+                <div class="col-md-5 {{ module.image_position == 'right' ? 'order-md-last' }} col-lg-6">
+            {% endif %}
+                    <div class="cta__image-overlay {{ module.hide_image_overlay ? 'cta__image-overlay--hidden' }} {{ module.image_position ? 'cta__image-overlay--' ~ module.image_position }}">
+                        <img alt="" class="cta__image" src="{{ image.src('square') }}">
+                    </div>
+            {% if module.image_position %}
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {% if module.image_position %}
+            <div class="col-md-7 col-lg-6">
+        {% endif %}
+
+                <div class="cta__content">
+                    {% if cta.heading or cta.subheading %}
+                        <div class="cta__header">
+                            {% if cta.heading %}
+                                <h2 class="cta__heading">{{ cta.heading }}</h2>
+                            {% endif %}
+
+                            {% if cta.subheading %}
+                                <span class="cta__subheading">{{ cta.subheading }}</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if cta.copy %}
+                        <div class="cta__copy">
+                            {{ cta.copy }}
+                        </div>
+                    {% endif %}
+
+                    {% if cta.link %}
+                        <div class="cta__link">
+                            <a class="button" href="{{ cta.link.url }}" target="{{ cta.link.target }}">{{ cta.link.title }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+
+        {% if module.image_position %}
+            </div>
+        {% endif %}
+
+    {% if module.image_position %}
+        </div>
+    {% endif %}
+
+</div>

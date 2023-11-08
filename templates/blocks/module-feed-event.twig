@@ -1,0 +1,46 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	{% set image = Image(module.image) %}
+	{% if image.src %}
+		<img alt="" class="feed-event__image" src="{{ image.src('hero') }}">
+	{% endif %}
+
+	<div class="row">
+		<div class="col-md-7 col-lg-6">
+			<div class="feed-event__content">
+				<h2 class="feed-event__heading">Upcoming {{ module.event_category.name }} Events</h2>
+				
+				{% if module.events %}
+					<div class="feed-event__events">
+						{% for event in module.events %}
+							<div class="feed-event__item">
+		
+								<span class="feed-event__meta">
+									{{ event.start }}
+								</span>
+		
+								<h3 class="feed-event__title">
+									<a href="{{ event.link }}">{{ event.title }}</a>
+								</h3>
+								
+								{% if event.venue %}
+									<span class="feed-event__venue">{{ event.venue }}</span>
+								{% endif %}
+		
+								<p class="feed-event__preview">{{ event.preview.length(25).read_more('') }} <a href="{{ event.link }}">Read More <span aria-hidden="true">&raquo;</span></a></p>
+								
+							</div>
+						{% endfor %}
+					</div>
+					
+					<a class="button" href="/events">All Events</a>
+				{% else %}
+					<p>Sorry, no events were found.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

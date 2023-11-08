@@ -1,0 +1,53 @@
+.title-landing {
+  position: relative;
+  background-color: $black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  padding-top: 100px;
+  padding-bottom: 75px;
+  text-align: center;
+
+  .title-landing__heading {
+    position: relative;
+    z-index: 1;
+    background-image: url(../../dist/img/Heading_Pattern@1x.svg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 125px 12px;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 0;
+    padding-bottom: calc(10px + 12px);
+    text-shadow: 0 0 6px rgba(0,0,0,0.79);
+    text-transform: uppercase;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $blue;
+    content: '';
+    display: block;
+    height: 100%;
+    mix-blend-mode: multiply;
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .title-landing {
+    padding-top: 110px;
+    padding-bottom: 130px;
+  
+    .title-landing__heading {
+      background-size: 235px 22px;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      line-height: 1.05;
+      padding-bottom: calc(20px + 22px);
+    }
+  }
+}

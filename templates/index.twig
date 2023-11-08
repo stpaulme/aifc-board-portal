@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+    {% block page_title %}
+        {% include 'blocks/title-landing.twig' %}
+    {% endblock %}
+
+	{% block content %}
+        <div class="posts-index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-9">
+                        <div class="posts-index__excerpts">
+                            {% for post in posts %}
+                                {% include 'blocks/excerpt.twig' %}
+                            {% endfor %}
+                        </div>
+                        
+                        {% if posts.pagination.prev or posts.pagination.next %}
+                            {% include 'blocks/pagination.twig' %}
+                        {% endif %}
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="posts-index__categories">
+                            <h2>Categories</h2>
+                            
+                            <ul>
+                                    {% for category in blog_categories %}
+                                        <li {{ category.id == current_category.id ? 'class="current"' }}><a href="{{ category.link }}">{{ category.name }}</a></li>
+                                    {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endblock %}

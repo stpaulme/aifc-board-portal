@@ -1,0 +1,40 @@
+.individual-post {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  
+  .individual-post__figure {
+    margin-bottom: 20px;
+    
+    .individual-post__image {
+      border-radius: 5px 5px 0 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .individual-post__image {
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .individual-post__all {
+    border-top: 2px solid $gray-border;
+    font-size: 0.875rem;
+    line-height: 1.1875;
+    margin-top: 25px;
+    padding-top: 20px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .individual-post {
+     padding-bottom: 60px;
+     
+     .individual-post__figure {
+       margin-bottom: 30px;
+     }
+   
+     .individual-post__image {
+       margin-bottom: 30px;
+     }
+   }
+}

@@ -1,0 +1,15 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+    {% if module.image_grid %}
+        <div class="image-grid__grid">
+            {% for image in Image(module.image_grid) %}
+                <div class="image-grid__cell">
+                    <img alt="" src="{{ image.src('hd') }}">
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

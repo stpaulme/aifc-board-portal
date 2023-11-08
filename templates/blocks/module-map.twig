@@ -1,0 +1,57 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+	
+	<div class="cta">
+
+		{% if module.map_position %}
+			<div class="row">
+		{% endif %}
+
+			{% if module.map %}
+				{% if module.map_position %}
+					<div class="col-md-6 {{ module.map_position == 'right' ? 'order-md-last' }} cta__map-col">
+				{% endif %}
+
+					<div class="cta__image er-container">
+						{{ module.map }}
+					</div>
+
+				{% if module.map_position %}
+					</div>
+				{% endif %}
+			{% endif %}
+
+			{% if module.map_position %}
+				<div class="col-md">
+			{% endif %}
+
+				<div class="cta__content">
+					{% if module.heading %}
+						<h2 class="cta__heading">{{ module.heading }}</h2>
+					{% endif %}
+
+					{% if module.copy %}
+						<div class="cta__copy">
+							{{ module.copy }}
+						</div>
+					{% endif %}
+
+					{% if module.link %}
+						<div class="cta__link">
+							<a class="button" href="{{ module.link.url }}" target="{{ module.link.target }}">{{ module.link.title }}</a>
+						</div>
+					{% endif %}
+				</div>
+
+			{% if module.map_position %}
+				</div>
+			{% endif %}
+
+		{% if module.map_position %}
+			</div>
+		{% endif %}
+
+	</div>
+
+{% endblock %}

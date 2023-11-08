@@ -1,0 +1,10 @@
+.image-grid {
+  .image-grid__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image-grid__cell {
+    flex: 1 1 50%;
+  }
+}

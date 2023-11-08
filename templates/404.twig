@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="error-404">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    {% if content.heading %}
+                        <h2 class="error-404__heading">
+                            {{ content.heading }}
+                        </h2>
+                    {% endif %}
+                    
+                    {% if content.copy %}
+                        <div class="error-404__copy">
+                            {{ content.copy }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

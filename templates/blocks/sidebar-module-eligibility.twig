@@ -1,0 +1,25 @@
+{% extends 'blocks/sidebar-module.twig' %}
+
+{% block content %}
+
+	{% if module.heading %}
+		<h2 class="sidebar-eligibility__heading">{{ module.heading }}</h2>
+	{% endif %}
+
+	{% if module.subheading %}
+		<span class="sidebar-eligibility__subheading">{{ module.subheading }}</span>
+	{% endif %}
+		
+	{% if module.eligibility or module.contact.url %}
+		<div class="sidebar-eligibility__copy">
+			{{ module.eligibility }}
+
+			{% if module.contact.url %}
+				<p><a class="sidebar-eligibility__contact" href="{{ module.contact.url }}" target="{{ module.contact.target }}">{{ module.contact.title }} <span aria-hidden="true">&raquo;</span></a></p>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	
+		
+{% endblock %}

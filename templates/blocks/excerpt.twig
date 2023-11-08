@@ -1,0 +1,37 @@
+<article class="excerpt">
+	{% block content %}
+		<div class="row">
+
+			{% if post.thumbnail %}
+				<div class="col-md-4">
+					<img class="excerpt__image" src="{{ post.thumbnail.src('hd') }}">
+				</div>
+			{% endif %}
+
+			<div class="col-md">
+				<div class="excerpt__meta">
+					<time class="excerpt__date">{{ post.date }}</time>
+
+					{% if post.categories|length > 0 %}
+						<ul class="excerpt__cats">
+							{% for item in post.categories %}
+								<li>
+									<a href="{{ item.link }}">{{ item.name }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
+
+				<h2 class="excerpt__title">
+					<a href="{{ post.link }}">{{ post.title }}</a>
+				</h2>
+
+				<p class="excerpt__preview">{{ post.preview.read_more('') }}</p>
+
+                <a class="excerpt__more" href="{{ post.link }}">Read More <span aria-hidden="true">&raquo;</span></a>
+			</div>
+
+		</div>
+	{% endblock %}
+</article>

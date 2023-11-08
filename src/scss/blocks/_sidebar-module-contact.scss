@@ -1,0 +1,36 @@
+.sidebar-contact {
+  .sidebar-contact__image {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .sidebar-contact__content {
+    padding: 25px 20px 30px;
+    text-align: center;
+  }
+
+  .sidebar-contact__copy {
+    font-size: 1rem;
+    line-height: 1.5625;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .sidebar-contact__contact {
+    margin-top: 30px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .sidebar-contact {
+    .sidebar-contact__content {
+      padding: 25px 20px;
+    }
+  
+    .sidebar-contact__copy {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  }
+}

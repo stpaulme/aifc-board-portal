@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container">
+		
+		<article class="individual-staff">
+			
+			<div class="row">
+				
+				{% if post.thumbnail %}
+					<div class="col-md-5 col-lg-4">
+						<img class="individual-staff__image" src="{{ post.thumbnail.src('square') }}">
+					</div>
+				{% endif %}
+			
+				<div class="col-md-7 col-lg-8">
+					<h2 class="individual-staff__name">{{ post.title }}</h2>
+					
+					{% if post.meta('position') %}
+						<span class="individual-staff__position">{{ post.meta('position') }}</span>
+					{% endif %}
+					
+					{% if post.meta('email') %}
+						<a class="individual-staff__email" href="mailto:{{ post.meta('email') }}">{{ post.meta('email') }}</a>
+					{% endif %}
+					
+					{% if post.meta('phone') %}
+						<a
+								class="individual-staff__phone"
+								href="tel:{{ post.meta('phone') }}{{ post.meta('extension') ? ';'~post.meta('extension') }}">
+										{{ post.meta('phone') }}
+										{{ post.meta('extension') ? ' ext. '~post.meta('extension') }}
+						</a>
+					{% endif %}
+					
+					{% if post.meta('tribal_affiliation') %}
+						<span class="individual-staff__tribal-affiliation">{{ post.meta('tribal_affiliation') }}</span>
+					{% endif %}
+					
+					<div class="individual-staff__copy">
+						{{ post.content }}
+					</div>
+				</div>
+				
+			</div>
+
+		</article>
+		
+	</div>
+{% endblock %}

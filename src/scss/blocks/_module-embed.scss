@@ -1,0 +1,7 @@
+.embed {
+  padding: 0;
+
+  .embed__content {
+    @extend .er-container;
+  }
+}

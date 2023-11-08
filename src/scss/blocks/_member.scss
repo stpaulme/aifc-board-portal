@@ -1,0 +1,43 @@
+.member {
+  line-height: 1.1875;
+
+  .member__image {
+    margin-bottom: 20px;
+  }
+
+  .member__name,
+  .member__position,
+  .member__email,
+  .member__phone,
+  .member__tribal-affiliation {
+    display: block;
+  }
+
+  .member__name {
+    font-size: 1.125rem;
+    line-height: 1.166666667;
+
+    a {
+      color: inherit;
+      font-weight: inherit;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  .member__position {
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  .member__email {
+    margin-top: 15px;
+    word-break: break-all;
+  }
+
+  .member__phone, .member__tribal-affiliation {
+    margin-top: 5px;
+  }
+}

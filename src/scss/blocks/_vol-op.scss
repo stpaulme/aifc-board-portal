@@ -1,0 +1,11 @@
+.vol-op {
+  background-color: $gray;
+  padding: 20px;
+  text-align: center;
+
+  &__date-range,
+  &__location {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+}

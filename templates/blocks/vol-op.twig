@@ -1,0 +1,21 @@
+<div class="vol-op">
+    {% if item.heading %}
+        <h3 class="vol-op__heading">{{ item.heading }}</h3>
+    {% endif %}
+
+    {% if item.date_range %}
+        <p class="vol-op__date-range">{{ item.date_range }}</p>
+    {% endif %}
+
+    {% if item.location %}
+        <p class="vol-op__location">{{ item.location }}</p>
+    {% endif %}
+
+    {% if item.description %}
+        <p class="vol-op__description">{{ item.description }}</p>
+    {% endif %}
+
+    {% if item.link.url %}
+        <a class="button" href="{{ item.link.url }}">{{ item.link.title }}</a>
+    {% endif %}
+</div>

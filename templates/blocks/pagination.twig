@@ -1,0 +1,17 @@
+<div class="pagination">
+    <div class="row">
+
+        {% if posts.pagination.prev %}
+            <div class="col pagination__prev">
+                <a href="{{ posts.pagination.prev.link }}"><span aria-hidden="true">&laquo;</span> Older Posts</a>
+            </div>
+        {% endif %}
+
+        {% if posts.pagination.next %}
+            <div class="col pagination__next">
+                <a href="{{ posts.pagination.next.link }}">Newer Posts <span aria-hidden="true">&raquo;</span></a>
+            </div>
+        {% endif %}
+
+    </div>
+</div>

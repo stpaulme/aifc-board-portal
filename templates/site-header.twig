@@ -1,0 +1,26 @@
+{% set logo = Image(options.logo) %}
+
+<header class="site-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-5 col-md-3 col-lg-2">
+                <a class="site-header__logo-link" href="{{ site.url }}">
+                    <img alt="{{ site.title }} homepage" class="site-header__logo" src="{{ logo.src }}">
+                </a>
+            </div>
+
+            <div class="col site-header__mobile-menu-col">
+                <button id="site-header__hamburger" aria-label="Toggle Mobile Menu">
+                    <img alt="Toggle Mobile Menu" src="{{ theme.link }}/dist/img/mobile_menu.svg">
+                </button>
+                {% include 'blocks/nav.twig' with { 'menu' : menu_mobile, 'modifier' : 'mobile' } %}
+            </div>
+
+            <div class="col site-header__desktop-menu-col">
+                <div class="site-header__desktop-menu-wrap">
+                    {% include 'blocks/nav.twig' with { 'menu' : menu_primary, 'modifier' : 'primary', 'show_search' : true } %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,30 @@
+{% extends 'blocks/sidebar-module.twig' %}
+
+{% block content %}
+
+	{% set image = Image(module.image) %}
+
+	{% if image.src %}
+		<img alt="" class="sidebar-contact__image" src="{{ image.src('cta_icon') }}">
+	{% endif %}
+
+	<div class="sidebar-contact__content">
+		{% if module.heading %}
+			<h2 class="sidebar-contact__heading">{{ module.heading }}</h2>
+		{% endif %}
+
+		{% if module.copy %}
+			<div class="sidebar-contact__copy">
+				{{ module.copy }}
+			</div>
+		{% endif %}
+
+		{% set contact = Post(module.contact) %}
+		{% if contact %}
+			<div class="sidebar-contact__contact">
+				{% include 'blocks/member.twig' with { 'post' : contact, 'show_title' : true } %}
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}

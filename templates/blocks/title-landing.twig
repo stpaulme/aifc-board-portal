@@ -1,0 +1,15 @@
+{% if manually_featured_image %}
+    {% set hero_image = manually_featured_image %}
+{% else %}
+    {% set hero_image = post.thumbnail %}
+{% endif %}
+
+<div class="title-landing" style="background-image: url( {{ hero_image.src('hero') }} )";>
+    <div class="container">
+        <h1 class="title-landing__heading">{{ title }}</h1>
+    </div>
+</div>
+
+{% if breadcrumbs %}
+    {% include 'blocks/breadcrumbs.twig' %}
+{% endif %}

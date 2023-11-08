@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+    {% block content %}
+        <div class="wysiwyg">
+            {{ post.content }}
+        </div>
+    {% endblock %}
+
+    {% block sidebar %}
+        {% if sidebar_nav %}
+            <div class="sidebar__item sidebar__item--nav">
+                {% include 'blocks/sidebar-nav.twig' %}
+            </div>
+        {% endif %}
+
+        {% if sidebar_modules %}
+            {% for module in sidebar_modules %}
+
+                {% set module_name = module.acf_fc_layout|replace('_', '-') %}
+                {% set module_style = module.style|replace('_', '-') %}
+
+                <div class="sidebar__item sidebar__item--{{ module_name }}">
+                    {% include ['blocks/sidebar-module-' ~ module_name ~ '.twig', 'blocks/sidebar-module.twig'] %}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+
+    {% block below %}
+        {% for module in below %}
+
+            {% set module_name = module.acf_fc_layout|replace('_', '-') %}
+            {% set module_style = module.style|replace('_', '-') %}
+
+            {% include ['blocks/module-' ~ module_name ~ '.twig', 'blocks/module.twig'] %}
+
+        {% endfor %}
+    {% endblock %}

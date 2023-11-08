@@ -1,0 +1,25 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<div class="emergency-contact-info__content">
+				{% if module.heading %}
+					<h2 class="emergency-contact-info__heading">{{ module.heading }}</h2>
+				{% endif %}
+	
+				{% if module.copy %}
+					<div class="emergency-contact-info__copy">
+						{{ module.copy }}
+					</div>
+				{% endif %}
+	
+				{% if module.phone %}
+					<a class="emergency-contact-info__phone" href="tel:{{ module.phone }}">{{ module.phone }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

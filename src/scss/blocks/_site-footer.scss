@@ -1,0 +1,226 @@
+.site-footer {
+  background-color: $black;
+  color: $white;
+  padding: 40px 0 15px;
+
+  a {
+    color: $yellow;
+    font-weight: 500;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .site-footer__pattern {
+    background-image: url('../../dist/img/pattern_horizontal.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 40px;
+    padding-top: calc(451 / 1825 * 100%);
+  }
+
+  .site-footer__contact-list {
+    font-size: 0.875rem;
+    line-height: 1.15;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .site-footer__contact-term {
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .site-footer__contact-def {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .site-footer__social-list {
+    list-style: none;
+    margin-bottom: 40px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .site-footer__social-item {
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .site-footer__social-link {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 40px;
+    width: 40px;
+
+    &[href*="facebook"] {
+      background-image: url('../../dist/img/social_fb.svg');
+    }
+    
+    &[href*="instagram"] {
+      background-image: url('../../dist/img/social_instagram.svg');
+    }
+
+    &[href*="linkedin"] {
+      background-image: url('../../dist/img/social_linkedin.svg');
+    }
+
+    &[href*="twitter"] {
+      background-image: url('../../dist/img/social_twitter.svg');
+    }
+    
+    &[href*="youtube"] {
+      background-image: url('../../dist/img/social_youtube.svg');
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .site-footer__logo-link {
+    display: block;
+    margin-bottom: 25px;
+    text-align: center;
+
+    &:hover {
+      img {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .site-footer__colophon {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    text-align: center;
+
+    a {
+      border: 0;
+      color: inherit;
+      font-weight: inherit;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .site-footer__copyright {
+    margin-bottom: 15px;
+  }
+
+  .site-footer__attribution {
+    margin-bottom: 0;
+  }
+
+  :focus {
+    box-shadow: 0 0 0 1px #d0d0d0;
+    outline: 0;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .site-footer {
+    .site-footer__pattern {
+      background-repeat: repeat-x;
+      background-size: 25%;
+      margin-bottom: 80px;
+      padding-top: calc(451 / 1825 * 25%);
+    }
+
+    .site-footer__contact-list {
+      margin-bottom: 25px;
+      overflow: auto;
+      text-align: left;
+    }
+  
+    .site-footer__contact-term {
+      float: left;
+      margin-right: 7px;
+      margin-bottom: 0;
+    }
+  
+    .site-footer__contact-def {
+      margin-bottom: 9px;
+    }
+
+    .site-footer__social-list {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+  
+    .site-footer__social-link {
+      height: 27px;
+      width: 27px;
+    }
+
+    .site-footer__logo-link {
+      margin-top: calc(43px + 30px + 46px + 30px);
+      text-align: right;
+    }
+  
+    .site-footer__colophon {
+      text-align: left;
+    }
+  
+    .site-footer__copyright {
+      margin-bottom: 0;
+    }
+  
+    .site-footer__attribution {
+      text-align: right;
+    }
+  } 
+}
+
+@include media-breakpoint-up(lg) {
+  .site-footer {
+    .site-footer__contact-social {
+      display: flex;
+      margin: 0 -15px 25px;
+    }
+
+    .site-footer__contact-list, .site-footer__social-list {
+      margin-bottom: 0;
+      padding: 0 15px;
+    }
+
+    .site-footer__contact-list {
+      margin-top: 5px;
+    }
+  
+    .site-footer__contact-term {
+      float: left;
+      margin-right: 7px;
+      margin-bottom: 0;
+    }
+  
+    .site-footer__contact-def {
+      float: left;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+
+    .site-footer__logo-link {
+      margin-top: 0;
+    }
+  } 
+}

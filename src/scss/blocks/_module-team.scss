@@ -1,0 +1,119 @@
+.team {
+  background-color: $gray-background;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  
+  .team__heading {
+    border-bottom: 4px solid $gray-border;
+    font-size: 1.625rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .team__subheading {
+    color: $gray-text;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.125;
+    margin-bottom: 20px;
+  }
+  
+  .team__col {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .team__member {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.15);
+  }
+  
+  .member {
+    .member__image {
+      border-radius: 5px 5px 0 0;
+      margin-bottom: 0;
+    }
+    
+    .member__content {
+      padding: 25px 20px;
+    }
+    
+    .member__name {
+      font-size: 1.3125rem;
+      line-height: 1.1;
+    }
+  
+    .member__position {
+      font-size: 1.125rem;
+      line-height: 1.166666667;
+    }
+  
+    .member__email {
+      margin-top: 12px;
+    }
+  
+    .member__phone {
+      margin-top: 5px;
+    }
+    
+    .member__tribal-affiliation {
+      font-size: 0.875rem;
+      line-height: 1.2;
+      margin-top: 12px;
+    }
+  }
+  
+  .team__link {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+.team + .team {
+  padding-top: 0;
+}
+
+@include media-breakpoint-up(md) {
+  .team {
+    padding: 60px 0;
+    
+    .team__heading {
+      font-size: 2.25rem;
+      line-height: 1.055555556;
+      margin-bottom: 40px;
+    }
+    
+    .team__subheading {
+      margin-bottom: 30px;
+    }
+    
+    .team__col {
+      margin-bottom: 30px;
+      
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .team {
+    .team__col {
+      &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+    }
+    
+    .team__link {
+      margin-top: 40px;
+      text-align: right;
+    }
+  }
+}
+

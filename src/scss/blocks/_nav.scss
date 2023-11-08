@@ -1,0 +1,136 @@
+.nav {
+  .nav__list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  .nav__item {
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.nav--mobile {
+  display: none;
+}
+
+.nav--footer {
+  line-height: 1.1875;
+  text-align: center;
+
+  .nav__list {
+    margin-bottom: 40px;
+  }
+
+  .nav__item {
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .nav {
+    .nav__item {
+      display: inline-block;
+      margin-right: 25px;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .nav--primary {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.1875;
+    height: 100%;
+    
+    .nav__list {
+      height: 100%;
+      text-align: right;
+      white-space: nowrap;
+    }
+    
+    .nav__item {
+      height: 100%;
+      
+      > a:not(.button) {
+        border-bottom: 5px solid transparent;
+        color: $black;
+        display: block;
+        font-weight: 500;
+        padding-bottom: 8px;
+  
+        &.current-menu-item, &.current-page-ancestor {
+          border-bottom-color: $red;
+        }
+      }
+    }
+    
+    .nav__item:hover {
+      a:not(.button) {
+        border-bottom-color: $red;
+      }
+    }
+    
+    .nav__children {
+      position: absolute;
+      top: calc(100%);
+      z-index: 9999;
+      background-color: $white;
+      border-radius: 0 0 5px 5px;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      list-style: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 20px;
+      text-align: left;
+      width: 1px;
+    }
+    
+    .nav__item:hover .nav__children {
+      clip: auto;
+      height: auto;
+      width: auto;
+    }
+    
+    .nav__child {
+      margin-bottom: 25px;
+
+      &:last-child {
+          margin: 0;
+      }
+      
+      a {
+        color: $black;
+        font-weight: 500;
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  .nav--footer {
+    text-align: left;
+  
+    .nav__list {
+      margin-bottom: 30px;
+      white-space: nowrap
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .nav--primary {
+    .nav__children {
+      top: calc(100%);
+    }
+  }
+}

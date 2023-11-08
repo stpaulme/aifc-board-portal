@@ -1,0 +1,25 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	{% if module.heading %}
+		<div class="row">
+			<div class="col-md-10 col-lg-8">
+				<h2 class="cta-pair__heading">{{ module.heading }}</h2>
+			</div>
+		</div>
+	{% endif %}
+
+	{% if module.cta_pair|length > 0 %}
+		<div class="row">
+			{% for cta in module.cta_pair %}
+				<div class="col-lg-6 cta-pair__col">
+					<div class="cta-pair__cta">
+						{% include 'blocks/cta--pair.twig' %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+{% endblock %}

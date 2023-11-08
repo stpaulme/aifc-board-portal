@@ -1,0 +1,45 @@
+.sidebar-eligibility {
+  font-size: 0.875rem;
+  line-height: 1.5;
+
+  .sidebar-eligibility__subheading {
+    color: $gray-text;
+    display: block;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .sidebar-eligibility__copy {
+    ol, ul {
+      padding-left: 0;
+    }
+
+    ol, p, ul {
+        margin-bottom: 10px;
+    }
+
+    p + ol, p + ul {
+        margin-top: -5px;
+    }
+
+    ul {
+        list-style: none;
+
+        li:before {
+            content: '\00BB ';
+            padding-right: 4px;
+        }
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+  }
+
+  .sidebar-eligibility__contact {
+    border-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.3125;
+  }
+}

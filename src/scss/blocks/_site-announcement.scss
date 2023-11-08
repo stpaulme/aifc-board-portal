@@ -1,0 +1,10 @@
+.site-announcement {
+    background-color: $yellow;
+    color: $black;
+    font-weight: 700;
+    padding: 10px 0;
+
+    .site-announcement__text {
+        margin-bottom: 0;
+    }
+}

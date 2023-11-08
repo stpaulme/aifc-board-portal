@@ -1,0 +1,30 @@
+{% if menu.items %}
+    <nav class="nav {{ modifier ? 'nav--' ~ modifier }}" aria-label="{{ menu.title }}" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="nav__list">
+            {% for item in menu.items %}
+                <li class="nav__item">
+                    <a class="nav__link {{ item.classes | join(' ') }}" href="{{ item.link }}" target="{{ item.target }}">
+                        {{ item.title }}
+                    </a>
+                    {% if item.children|length > 0 %}
+                        <ul class="nav__children">
+                            {% for child in item.children %}
+                                <li class="nav__child">
+                                    <a class="{{ child.classes | join(' ') }}" href="{{ child.link }}" target="{{ child.target }}">
+                                        {{ child.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+
+            {% if show_search == true %}
+                <li class="nav__item">
+                    {% include 'blocks/search.twig' %}
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

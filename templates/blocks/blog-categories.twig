@@ -1,0 +1,8 @@
+<nav class="blog-categories" aria-label="Categories">
+    <h2>Categories</h2>
+    <ul>
+        {% for item in blog_categories %}
+            <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

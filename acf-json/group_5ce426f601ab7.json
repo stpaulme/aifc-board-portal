@@ -1,0 +1,59 @@
+{
+    "key": "group_5ce426f601ab7",
+    "title": "Module - Embed",
+    "fields": [
+        {
+            "key": "field_5ce4270427126",
+            "label": "Embed",
+            "name": "embed",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_5d67e833c1f2f",
+            "label": "Additional Text for Screen Readers",
+            "name": "sr_text",
+            "type": "textarea",
+            "instructions": "If the embed is a video, use this field for any text in the video that is not also said out loud.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1592933679
+}

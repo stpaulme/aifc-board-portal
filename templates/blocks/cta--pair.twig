@@ -1,0 +1,33 @@
+<div class="cta cta--pair">
+
+    {% set image = Image(cta.image) %}
+
+    {% if image.src %}
+        <img alt="" class="cta__image" src="{{ image.src('cta_icon') }}">
+    {% endif %}
+
+    <div class="cta__content">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-lg-12 offset-lg-0">
+                {% if cta.heading%}
+                    {% if cta.heading %}
+                        <h2 class="cta__heading">{{ cta.heading }}</h2>
+                    {% endif %}
+                {% endif %}
+
+                {% if cta.copy %}
+                    <div class="cta__copy">
+                        {{ cta.copy }}
+                    </div>
+                {% endif %}
+
+                {% if cta.link %}
+                    <div class="cta__link">
+                        <a href="{{ cta.link.url }}" target="{{ cta.link.target }}">{{ cta.link.title }} <span aria-hidden="true">&raquo;</span></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>

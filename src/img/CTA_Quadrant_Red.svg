@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="251px" height="251px" viewBox="0 0 251 251" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CTA_Quadrant_Red</title>
+    <defs>
+        <polygon id="path-1" points="0 1.13686838e-13 251 1.13686838e-13 251 251 0 251"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="AIFC Board Portal-Homepage-2" transform="translate(-534.000000, -3107.000000)">
+            <g id="CTA_Quadrant_Red" style="mix-blend-mode: multiply;" transform="translate(659.500000, 3232.500000) rotate(-270.000000) translate(-659.500000, -3232.500000) translate(534.000000, 3107.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M251,1.13686838e-13 C250.945931,138.632848 138.592457,251 0,251 L0,1.13686838e-13 L251,1.13686838e-13 Z" id="Fill-1" fill="#AB2C2C" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

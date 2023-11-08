@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container">
+		<article class="individual-post">
+
+			<div class="row">
+				<div class="col-lg-9">
+					{% if post.thumbnail %}
+					
+						{% if post.thumbnail.caption %}
+							<figure class="individual-post__figure wp-caption">
+						{% endif %}
+						
+								<img class="individual-post__image" src="{{ post.thumbnail.src('hd') }}">
+							
+						{% if post.thumbnail.caption %}
+								<figcaption class="wp-caption-text">{{ post.thumbnail.caption }}</figcaption>
+							</figure>
+						{% endif %}
+						
+					{% endif %}
+					
+					<div class="wysiwyg">
+						{{ post.content }}
+					</div>
+					
+					<div class="individual-post__all">
+						<a href="/updates"><span aria-hidden="true">&laquo;</span> All Updates</a>
+					</div>
+				</div>
+
+			</div>
+
+		</article>
+	</div>
+{% endblock %}

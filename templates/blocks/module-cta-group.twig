@@ -1,0 +1,23 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	{% if module.heading %}
+		<h2 class="cta-group__heading">{{ module.heading }}</h2>
+	{% endif %}
+
+	<div class="row cta-group__row">
+		<div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+			{% if module.cta_group|length > 0 %}
+				<div class="row">
+					{% for cta in module.cta_group %}
+						<div class="col-lg-4 cta-group__col">
+							{% include 'blocks/cta--group.twig' %}
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

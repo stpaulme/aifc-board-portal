@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>social_linkedin</title>
+    <defs>
+        <polygon id="path-1" points="0 27 27 27 27 0 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="AIFC Board Portal-Homepage-2" transform="translate(-732.000000, -3742.000000)">
+            <g id="Group-13" transform="translate(0.000000, 3418.000000)">
+                <g id="Group-15" transform="translate(693.000000, 324.000000)">
+                    <g id="social_linkedin" transform="translate(39.000000, 0.000000)">
+                        <path d="M13.5,0 C20.956,0 27,6.044 27,13.5 C27,20.956 20.956,27 13.5,27 C6.044,27 0,20.956 0,13.5 C0,6.044 6.044,0 13.5,0" id="Fill-1" fill="#FFFFFF"></path>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-4"></g>
+                        <path d="M7.45,18.75 L9.95,18.75 L9.95,10.75 L7.45,10.75 L7.45,18.75 Z M8.65,9.75 L8.65,9.75 C7.75,9.75 7.15,9.15 7.15,8.45 C7.15,7.65 7.75,7.05 8.65,7.05 C9.55,7.05 10.15,7.65 10.15,8.45 C10.15,9.15 9.55,9.75 8.65,9.75 L8.65,9.75 Z M19.85,18.75 L17.05,18.75 L17.05,14.65 C17.05,13.55 16.55,12.75 15.65,12.75 C14.85,12.75 14.45,13.25 14.25,13.75 L14.25,14.45 L14.25,18.75 L11.45,18.75 L11.45,10.85 L14.25,10.85 L14.25,12.05 C14.35,11.45 15.25,10.75 16.65,10.75 C18.45,10.75 19.75,11.85 19.75,14.35 L19.75,18.75 L19.85,18.75 Z" id="Fill-3" fill="#1F1D1D" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

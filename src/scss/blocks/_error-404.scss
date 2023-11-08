@@ -1,0 +1,35 @@
+.error-404 {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  
+  .error-404__heading {
+    border-bottom: 5px solid $gray-border;
+    font-size: 1.5rem;
+    line-height: 1.125;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .error-404__copy {
+    a {
+      border: 0;
+    }
+    
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .error-404 {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    
+    .error-404__heading {
+      font-size: 1.6875rem;
+      line-height: 1.074074074;
+      margin-bottom: 15px;
+    }
+  }    
+} 
