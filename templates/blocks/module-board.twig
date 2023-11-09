@@ -1,0 +1,17 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+    {% if module.members|length > 0 %}
+		<div class="row">
+			{% for member in module.members %}
+				<div class="col-md-6 col-lg-4 board__col">
+					<div class="board__member">
+						{% include 'blocks/member.twig' %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+{% endblock %}

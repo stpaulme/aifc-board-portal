@@ -1,0 +1,69 @@
+.board {
+    background-color: $gray-background;
+
+    &__col {
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__member {
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .member {
+        &__content {
+            padding: 25px 20px;
+        }
+
+        &__name {
+            font-size: 1.3125rem;
+            line-height: 1.1;
+        }
+
+        &__position {
+            font-size: 1.125rem;
+            line-height: 1.166666667;
+        }
+
+        &__email {
+            margin-top: 12px;
+        }
+
+        &__phone {
+            margin-top: 5px;
+        }
+
+        &__tribal-affiliation {
+            font-size: 0.875rem;
+            line-height: 1.2;
+            margin-top: 12px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .board {
+        &__col {
+            margin-bottom: 30px;
+
+            &:nth-last-child(-n + 2) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .board {
+        &__col {
+            &:nth-last-child(-n + 3) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
