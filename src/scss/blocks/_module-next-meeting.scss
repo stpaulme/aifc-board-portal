@@ -1,103 +1,89 @@
 .next-meeting {
-    padding: 30px 0;
-
-    .next-meeting__header {
-        @extend .module-header;
+    &__heading {
+        border-bottom: 5px solid $gray-border;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
     }
 
-    .next-meeting__heading {
-        @extend .module-heading;
+    &__date-time {
+        display: block;
+        line-height: 1.0625;
+        margin-bottom: 6px;
+        text-transform: uppercase;
     }
 
-    .next-meeting__subheading {
-        @extend .module-subheading;
+    &__sep {
+        color: #d0d0d0;
     }
 
-    .next-meeting__intro {
-        font-size: 1rem;
-        line-height: 1.5;
-
-        > :last-child {
-            margin-bottom: 0;
-        }
+    &__title {
+        font-size: 1.3125rem;
+        line-height: 1.2;
+        margin-bottom: 0;
     }
 
-    .next-meeting__next-meeting {
-        border-bottom: 8px solid $yellow;
-        border-radius: 5px;
-        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
-        font-size: 0.875rem;
-        line-height: 1.5;
-        margin-top: 40px;
-        padding: 25px 20px;
-
-        h3 {
-            font-size: 1.3125rem;
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-
-        ol,
-        ul {
-            padding-left: 0;
-        }
-
-        ol,
-        p,
-        ul {
-            margin-bottom: 10px;
-        }
-
-        p+ol,
-        p+ul {
-            margin-top: -5px;
-        }
-
-        ul {
-            list-style: none;
-
-            li:before {
-                content: '\00BB ';
-                padding-right: 4px;
-            }
-        }
-
-        > :last-child {
-            margin-bottom: 0;
-        }
+    &__note {
+        font-style: italic;
+        font-weight: 500;
+        margin-top: 8px;
     }
 
-    .next-meeting__contact {
-        border-bottom: 0;
-        font-size: 1rem;
-        line-height: 1.3125;
+    &__links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    &__agenda+&__permalink {
+        margin-top: 20px;
+    }
+
+    &__contact-cta {
+        margin-top: 30px;
     }
 }
 
 @include media-breakpoint-up(md) {
     .next-meeting {
-        padding: 50px 0;
-
-        .next-meeting__header {
-            margin-top: 20px;
+        &__heading {
+            font-size: 2rem;
+            line-height: 1.09375;
+            margin-bottom: 20px;
         }
 
-        .next-meeting__next-meeting {
-            margin-top: 0;
+        &__title {
+            font-size: 1.5rem;
+            line-height: 1.125;
+        }
 
-            h3 {
-                font-size: 1.5rem;
-                line-height: 1.125;
-                margin-bottom: 15px;
-            }
+        &__links {
+            align-items: center;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        &__agenda+&__permalink {
+            margin-top: 0;
+            margin-left: 20px;
+        }
+
+        &__contact-cta {
+            margin-top: 0;
         }
     }
 }
 
 @include media-breakpoint-up(lg) {
     .next-meeting {
-        .next-meeting__intro {
-            font-size: 1.125rem;
+        &__heading {
+            font-size: 2.25rem;
+            line-height: 1.0556;
+        }
+
+        &__links {
+            margin-top: 25px;
         }
     }
 }

@@ -21,9 +21,9 @@
 
                                 {% if post.meta('meeting_start_time') %}
                                     <span class="meeting__time">
-                                        {{ post.meta('meeting_start_time')|date('g:i a') }}
+                                        {{ post.meta('meeting_start_time')|date('g:i A') }}
                                         {% if post.meta('meeting_end_time') %}
-                                        &ndash; {{ post.meta('meeting_end_time') }}
+                                        &ndash; {{ post.meta('meeting_end_time')|date('g:i A') }}
                                         {% endif %}
                                     </span>
                                 {% endif %}
