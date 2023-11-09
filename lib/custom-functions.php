@@ -76,3 +76,12 @@ function spm_add_data_to_modules($modules)
     return $modules;
 
 }
+
+function spm_is_acf_date_in_future($field_name)
+{
+    $acf_date = get_field($field_name);
+
+    $current_date = date('Y-m-d H:i:s');
+
+    return strtotime($acf_date) > strtotime($current_date);
+}

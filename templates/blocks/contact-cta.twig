@@ -1,0 +1,35 @@
+<div class="contact-cta">
+    {% if contact_cta_image %}
+        <img alt="" class="contact-cta__image" src="{{ contact_cta_image.src }}">
+    {% endif %}
+
+    {% if contact_cta_heading %}
+        <h2 class="contact-cta__heading">{{ contact_cta_heading }}</h2>
+    {% endif %}
+
+    {% if contact_cta_copy %}
+        <div class="contact-cta__copy">
+            {{ contact_cta_copy }}
+        </div>
+    {% endif %}
+
+    {% if contact_cta_name or contact_cta_title or contact_cta_email or contact_cta_phone %}
+        <div class="contact-cta__contact">
+            {% if contact_cta_name %}
+                <h3 class="contact-cta__name">{{ contact_cta_name }}</h3>
+            {% endif %}
+
+            {% if contact_cta_title %}
+                <span class="contact-cta__title">{{ contact_cta_title }}</span>
+            {% endif %}
+
+            {% if contact_cta_email %}
+                <a class="contact-cta__email" href="mailto:{{ contact_cta_email }}">{{ contact_cta_email }}</a>
+            {% endif %}
+
+            {% if contact_cta_phone %}
+                <a class="contact-cta__phone" href="tel:{{ contact_cta_phone }}">{{ contact_cta_phone }}</a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

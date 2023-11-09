@@ -1,0 +1,71 @@
+.contact-cta {
+    background-color: $white;
+    border-bottom: 8px solid $yellow;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    padding: 30px 20px 25px;
+    text-align: center;
+
+    &__image {
+        margin-bottom: 25px;
+        max-width: 150px;
+    }
+
+    &__heading {
+        font-size: 1.3125rem;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+
+    &__copy {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-top: 15px;
+    }
+
+    &__contact {
+        margin-top: 30px;
+    }
+
+    &__name {
+        font-size: 1.125rem;
+        line-height: 1.1667;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        display: block;
+        font-style: italic;
+        line-height: 1.1875;
+        margin-top: 6px;
+    }
+
+    &__email {
+        display: block;
+        line-height: 1.1875;
+        margin-top: 12px;
+    }
+
+    &__phone {
+        display: block;
+        line-height: 1.1875;
+        margin-top: 12px;
+    }
+
+    &__email+&__phone {
+        margin-top: 6px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .contact-cta {
+        &__image {
+            max-width: 175px;
+        }
+
+        &__heading {
+            font-size: 1.5rem;
+            line-height: 1.125;
+        }
+    }
+}

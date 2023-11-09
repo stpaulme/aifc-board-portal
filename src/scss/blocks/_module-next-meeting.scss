@@ -1,19 +1,19 @@
-.eligibility {
+.next-meeting {
     padding: 30px 0;
 
-    .eligibility__header {
+    .next-meeting__header {
         @extend .module-header;
     }
 
-    .eligibility__heading {
+    .next-meeting__heading {
         @extend .module-heading;
     }
 
-    .eligibility__subheading {
+    .next-meeting__subheading {
         @extend .module-subheading;
     }
 
-    .eligibility__intro {
+    .next-meeting__intro {
         font-size: 1rem;
         line-height: 1.5;
 
@@ -22,10 +22,10 @@
         }
     }
 
-    .eligibility__eligibility {
+    .next-meeting__next-meeting {
         border-bottom: 8px solid $yellow;
         border-radius: 5px;
-        box-shadow: 0 0 8px 0 rgba(0,0,0,0.15);
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
         font-size: 0.875rem;
         line-height: 1.5;
         margin-top: 40px;
@@ -37,15 +37,19 @@
             margin-bottom: 10px;
         }
 
-        ol, ul {
+        ol,
+        ul {
             padding-left: 0;
         }
 
-        ol, p, ul {
+        ol,
+        p,
+        ul {
             margin-bottom: 10px;
         }
 
-        p + ol, p + ul {
+        p+ol,
+        p+ul {
             margin-top: -5px;
         }
 
@@ -63,7 +67,7 @@
         }
     }
 
-    .eligibility__contact {
+    .next-meeting__contact {
         border-bottom: 0;
         font-size: 1rem;
         line-height: 1.3125;
@@ -71,16 +75,16 @@
 }
 
 @include media-breakpoint-up(md) {
-    .eligibility {
+    .next-meeting {
         padding: 50px 0;
 
-        .eligibility__header {
+        .next-meeting__header {
             margin-top: 20px;
         }
-    
-        .eligibility__eligibility {
+
+        .next-meeting__next-meeting {
             margin-top: 0;
-    
+
             h3 {
                 font-size: 1.5rem;
                 line-height: 1.125;
@@ -91,8 +95,8 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .eligibility {
-        .eligibility__intro {
+    .next-meeting {
+        .next-meeting__intro {
             font-size: 1.125rem;
         }
     }

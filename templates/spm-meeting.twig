@@ -1,0 +1,100 @@
+{% extends "base.twig" %}
+
+    {% block page_title %}
+        {% if title %}
+            {% include 'blocks/title-landing.twig' %}
+        {% endif %}
+	{% endblock %}
+
+    {% block content %}
+        <div class="module meeting">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-8">
+                        <h2 class="meeting__title">{{ post.title }}</h2>
+
+                        {% if post.meta('meeting_date') or post.meta('meeting_start_time') %}
+                            <div class="meeting__date-time">
+                                {% if post.meta('meeting_date') %}
+                                    <h3 class="meeting__date">{{ post.meta('meeting_date') }}</h3>
+                                {% endif %}
+
+                                {% if post.meta('meeting_start_time') %}
+                                    <span class="meeting__time">
+                                        {{ post.meta('meeting_start_time')|date('g:i a') }}
+                                        {% if post.meta('meeting_end_time') %}
+                                        &ndash; {{ post.meta('meeting_end_time') }}
+                                        {% endif %}
+                                    </span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {% if post.meta('meeting_address') or post.meta('meeting_link') %}
+                            <div class="row meeting__address-link">
+                                {% if post.meta('meeting_address') %}
+                                    <div class="col-lg">
+                                        <div class="meeting__address">
+                                            <h4>Address</h4>
+                                            <address>
+                                                {{ post.meta('meeting_address') }}
+                                            </address>
+                                        </div>
+                                    </div>   
+                                {% endif %}
+
+                                {% set link = post.meta('meeting_link') %}
+                                {% if link.url %}
+                                    <div class="col-lg">
+                                        <div class="meeting__link">
+                                            <h4>{{ link.title }}</h4>
+                                            <a href="{{ link.url }}" target="{{ link.target }}">{{ link.url }}</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {% set agenda_link = post.meta('meeting_agenda') %}
+                        {% if agenda_link %}
+                            <div class="meeting__agenda">
+                                <a class="button" href="{{ agenda_link }}" target="_blank">Meeting Agenda</a>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="meeting__content wysiwyg">
+                            {{ post.content }}
+                        </div>
+                    </div>
+
+                    {% set contact_cta = post.meta('contact_cta') %}
+                    {% set contact_cta_image = Image(contact_cta.image) %}
+                    {% set contact_cta_heading = contact_cta.heading %}
+                    {% set contact_cta_copy = contact_cta.copy %}
+                    {% set contact_cta_name = contact_cta.contact_person.name %}
+                    {% set contact_cta_title = contact_cta.contact_person.title %}
+                    {% set contact_cta_email = contact_cta.contact_person.email %}
+                    {% set contact_cta_phone = contact_cta.contact_person.phone %}
+
+                    {% if contact_cta|length > 0 %}
+                        <div class="col-md-5 col-lg-4">
+                            <div class="meeting__contact-cta">
+                                {% include 'blocks/contact-cta.twig' %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block below %}
+        {% for module in below %}
+
+            {% set module_name = module.acf_fc_layout|replace('_', '-') %}
+            {% set module_style = module.style|replace('_', '-') %}
+
+            {% include ['blocks/module-' ~ module_name ~ '.twig', 'blocks/module.twig'] %}
+
+        {% endfor %}
+    {% endblock %}

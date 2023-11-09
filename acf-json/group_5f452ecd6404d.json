@@ -1,27 +1,12 @@
 {
     "key": "group_5f452ecd6404d",
-    "title": "Module - Eligibility",
+    "title": "Module - Next Meeting",
     "fields": [
         {
-            "key": "field_5f6cbdebe8aae",
-            "label": "Intro",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f452edb3380f",
+            "key": "field_654d2ecdba788",
             "label": "Heading",
             "name": "heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -31,36 +16,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Next Board Meeting",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
-            "key": "field_5f45363c81bab",
-            "label": "Subheading",
-            "name": "subheading",
-            "type": "text",
-            "instructions": "Optional",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f4530e691028",
-            "label": "Intro",
-            "name": "intro",
-            "type": "wysiwyg",
+            "key": "field_654d2ee1ba789",
+            "label": "Meeting",
+            "name": "meeting_page_id",
+            "aria-label": "",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -69,92 +36,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_5f6cbd5ecc3fc",
-            "label": "Link",
-            "name": "link",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5f6cbdfde8aaf",
-            "label": "Eligibility",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f4530a8387fb",
-            "label": "Eligibility",
-            "name": "eligibility",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_5f453114dd3f7",
-            "label": "Contact",
-            "name": "contact",
-            "type": "link",
-            "instructions": "To link to an email address, use the format mailto:name@example.com",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5f6cbe15e8ab0",
-            "label": "",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 1
+            "post_type": [
+                "page"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -174,5 +66,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1600962084
+    "show_in_rest": 0,
+    "modified": 1699557232
 }

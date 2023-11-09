@@ -115,14 +115,14 @@
                 },
                 "layout_5f45314c8b4d0": {
                     "key": "layout_5f45314c8b4d0",
-                    "name": "eligibility",
-                    "label": "Eligibility",
+                    "name": "next_meeting",
+                    "label": "Next Meeting",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5f4531528b4d1",
-                            "label": "Eligibility",
-                            "name": "eligibility",
+                            "label": "Next Meeting",
+                            "name": "next_meeting",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -267,5 +267,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699477548
+    "modified": 1699550399
 }

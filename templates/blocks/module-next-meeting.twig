@@ -7,18 +7,18 @@
 		{% if module.intro %}
 			<div class="col-md-7 col-lg-8">
 				{% if module.heading or module.subheading %}
-					<div class="eligibility__header">
+					<div class="next-meeting__header">
 						{% if module.heading %}
-							<h2 class="eligibility__heading">{{ module.heading }}</h2>
+							<h2 class="next-meeting__heading">{{ module.heading }}</h2>
 						{% endif %}
 
 						{% if module.subheading %}
-							<span class="eligibility__subheading">{{ module.subheading }}</span>
+							<span class="next-meeting__subheading">{{ module.subheading }}</span>
 						{% endif %}
 					</div>
 				{% endif %}
 
-				<div class="eligibility__intro">
+				<div class="next-meeting__intro">
 					{{ module.intro }}
 
 					{% if module.link.url %}
@@ -28,15 +28,15 @@
 			</div>
 		{% endif %}
 
-		{% if module.eligibility or module.contact.url %}
+		{% if module.next-meeting or module.contact.url %}
 			<div class="col-md-5 col-lg-4">
-				<div class="eligibility__eligibility">
-					{% if module.eligibility %}
-						{{ module.eligibility }}
+				<div class="next-meeting__next-meeting">
+					{% if module.next-meeting %}
+						{{ module.next-meeting }}
 					{% endif %}
 
 					{% if module.contact.url %}
-						<p><a class="eligibility__contact" href="{{ module.contact.url }}" target="{{ module.contact.target }}">{{ module.contact.title }} <span aria-hidden="true">&raquo;</span></a></p>
+						<p><a class="next-meeting__contact" href="{{ module.contact.url }}" target="{{ module.contact.target }}">{{ module.contact.title }} <span aria-hidden="true">&raquo;</span></a></p>
 					{% endif %}
 				</div>
 			</div>
