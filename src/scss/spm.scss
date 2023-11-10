@@ -472,3 +472,15 @@ img {
 @import "blocks/title-landing";
 @import "blocks/title-page";
 @import "blocks/vol-op";
+
+.mm-listview {
+  .mm-listitem {
+    a {
+      &.button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
