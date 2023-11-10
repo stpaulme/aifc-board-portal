@@ -1,0 +1,33 @@
+<article class="excerpt excerpt--document">
+	<div class="excerpt__meta">
+		<ul class="excerpt__cats">
+			{% if post.terms('document_category')|length > 0 %}
+				{% for item in post.terms('document_category') %}
+					<li>
+						<a href="{{ item.link }}">{{ item.name }}</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+
+			{% if post.terms('document_month')|length > 0 %}
+				{% for item in post.terms('document_month') %}
+					<li>
+						<a href="{{ item.link }}">{{ item.name }}</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+
+			{% if post.terms('document_year')|length > 0 %}
+				{% for item in post.terms('document_year') %}
+					<li>
+						<a href="{{ item.link }}">{{ item.name }}</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+	</div>
+
+	<h2 class="excerpt__title">
+		<a href="{{ post.meta('file') }}">{{ post.title }}</a>
+	</h2>
+</article>

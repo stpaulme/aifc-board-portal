@@ -2,31 +2,31 @@
   border-bottom: 2px solid $gray-border;
   margin-bottom: 25px;
   padding-bottom: 25px;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
 
-  .excerpt__image {
+  &__image {
     border-radius: 5px;
     margin-bottom: 20px;
   }
-  
-  .excerpt__meta {
+
+  &__meta {
     display: flex;
     font-size: 0.875rem;
     line-height: 1.15;
     margin-bottom: 9px;
   }
 
-  .excerpt__date {
+  &__date {
     border-right: 1px solid $yellow;
     text-transform: uppercase;
     margin-right: 4px;
     padding-right: 4px;
   }
 
-  .excerpt__cats {
+  &__cats {
     list-style: none;
     margin-bottom: 0;
     padding-left: 0;
@@ -44,43 +44,60 @@
       }
     }
   }
-  
-  .excerpt__title {
+
+  &__title {
     font-size: 1.3125rem;
     line-height: 1.3;
     margin-bottom: 12px;
-    
+
     a {
       color: inherit;
       font-weight: inherit;
-      
+
       &:hover {
         color: $link-hover-color;
       }
     }
   }
 
-  .excerpt__preview {
+  &__preview {
     font-size: 1rem;
     line-height: 1.375;
     margin-bottom: 15px;
   }
-  
-  .excerpt__more {
+
+  &__more {
     font-size: 1rem;
     line-height: 1.1875;
   }
 }
 
+.excerpt--document {
+  background-color: $white;
+  border-bottom: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 0;
+  padding: 20px;
+
+  .excerpt__title {
+    margin-bottom: 0;
+  }
+}
+
 @include media-breakpoint-up(md) {
   .excerpt {
-    .excerpt__image {
+    &__image {
       margin-bottom: 0;
     }
-    
-    .excerpt__title {
+
+    &__title {
       font-size: 1.5rem;
       line-height: 1.166666667;
     }
+  }
+
+  .excerpt--document {
+    padding: 25px 20px;
   }
 }
