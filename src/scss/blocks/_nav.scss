@@ -6,6 +6,10 @@
   }
 
   .nav__item {
+    .button {
+      padding: 5px 18px 9px;
+    }
+
     &:last-child {
       margin: 0;
     }
@@ -47,42 +51,44 @@
     font-size: 1rem;
     line-height: 1.1875;
     height: 100%;
-    
+
     .nav__list {
       height: 100%;
       text-align: right;
       white-space: nowrap;
     }
-    
+
     .nav__item {
       height: 100%;
-      
-      > a:not(.button) {
+
+      >a:not(.button) {
         border-bottom: 5px solid transparent;
         color: $black;
         display: block;
         font-weight: 500;
         padding-bottom: 8px;
-  
-        &.current-menu-item, &.current-page-ancestor {
+
+        &.current-menu-item,
+        &.current-page-ancestor {
           border-bottom-color: $red;
         }
       }
     }
-    
+
     .nav__item:hover {
       a:not(.button) {
         border-bottom-color: $red;
       }
     }
-    
+
     .nav__children {
       position: absolute;
       top: calc(100%);
       z-index: 9999;
       background-color: $white;
       border-radius: 0 0 5px 5px;
-      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px 1px 1px 1px);
+      /* IE6, IE7 */
       clip: rect(1px, 1px, 1px, 1px);
       height: 1px;
       list-style: none;
@@ -92,24 +98,24 @@
       text-align: left;
       width: 1px;
     }
-    
+
     .nav__item:hover .nav__children {
       clip: auto;
       height: auto;
       width: auto;
     }
-    
+
     .nav__child {
       margin-bottom: 25px;
 
       &:last-child {
-          margin: 0;
+        margin: 0;
       }
-      
+
       a {
         color: $black;
         font-weight: 500;
-        
+
         &:hover {
           color: $red;
         }
@@ -119,7 +125,7 @@
 
   .nav--footer {
     text-align: left;
-  
+
     .nav__list {
       margin-bottom: 30px;
       white-space: nowrap
