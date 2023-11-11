@@ -4,7 +4,7 @@
 			{% if post.terms('document_category')|length > 0 %}
 				{% for item in post.terms('document_category') %}
 					<li>
-						<a href="{{ item.link }}">{{ item.name }}</a>
+						<a href="/documents/?_sft_document_category={{ item.slug }}">{{ item.name }}</a>
 					</li>
 				{% endfor %}
 			{% endif %}
@@ -12,7 +12,7 @@
 			{% if post.terms('document_month')|length > 0 %}
 				{% for item in post.terms('document_month') %}
 					<li>
-						<a href="{{ item.link }}">{{ item.name }}</a>
+						<a href="/documents/?_sft_document_month={{ item.slug }}">{{ item.name }}</a>
 					</li>
 				{% endfor %}
 			{% endif %}
@@ -20,7 +20,7 @@
 			{% if post.terms('document_year')|length > 0 %}
 				{% for item in post.terms('document_year') %}
 					<li>
-						<a href="{{ item.link }}">{{ item.name }}</a>
+						<a href="/documents/?_sft_document_year={{ item.slug }}">{{ item.name }}</a>
 					</li>
 				{% endfor %}
 			{% endif %}
