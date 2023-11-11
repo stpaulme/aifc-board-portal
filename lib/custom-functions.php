@@ -52,23 +52,59 @@ function spm_add_data_to_modules($modules)
 
     foreach ($modules as &$module) {
 
-        if ($module['acf_fc_layout'] == 'feed_post') {
-            // Get data from ACF
-            $post_category = $module['post_category'];
+        if ($module['acf_fc_layout'] == 'feed_document') {
+            $selection_choice = $module['selection_choice'];
 
-            // Add post category to module in Timber
-            if (!empty($post_category)) {
-                $module['post_category'] = new Timber\Term($post_category);
+            if ($selection_choice == 'auto') {
+                // Get data from ACF
+                $year = $module['year'];
+                $month = $module['month'];
+                $category = $module['category'];
+
+                // Add posts to module in Timber
+                $args = array(
+                    'post_type' => 'document',
+                    'posts_per_page' => -1,
+                    'tax_query' => array(
+                        'relation' => 'AND',
+                    ),
+                );
+
+                if ($year != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_year',
+                        'field' => 'term_id',
+                        'terms' => $year,
+                    );
+                }
+
+                if ($month != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_month',
+                        'field' => 'term_id',
+                        'terms' => $month,
+                    );
+                }
+
+                if ($category != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_category',
+                        'field' => 'term_id',
+                        'terms' => $category,
+                    );
+                }
+
+                $module['posts'] = Timber::get_posts($args);
+            } else {
+                // Get data from ACF
+                $documents = $module['documents'];
+                $module['posts'] = [];
+
+                foreach ($documents as $post_id) {
+                    $post = new Timber\Post($post_id);
+                    $module['posts'][] = $post;
+                }
             }
-
-            // Add posts to module in Timber
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'cat' => $post_category,
-            );
-
-            $module['posts'] = Timber::get_posts($args);
         }
 
     }

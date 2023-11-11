@@ -1,0 +1,19 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	{% if module.heading %}
+		<h2 class="feed-document__heading">{{ module.heading }}</h2>
+	{% endif %}
+
+    {% if module.posts|length > 0 %}
+		<div class="row">
+			{% for post in module.posts %}
+				 <div class="col-md-6 col-lg-4 feed-document__col">
+                    {% include 'blocks/excerpt-document.twig' %}
+                </div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+{% endblock %}
