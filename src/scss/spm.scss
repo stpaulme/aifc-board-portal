@@ -222,7 +222,8 @@ img {
   padding: 40px 0;
 }
 
-.module+.module {
+.module--bg-gray+.module--bg-gray,
+.module--bg-white+.module--bg-white {
   padding-top: 0;
 }
 
@@ -452,6 +453,7 @@ img {
 @import "blocks/module-cta-single";
 @import "blocks/module-meeting";
 @import "blocks/module-next-meeting";
+@import "blocks/module-feed-document";
 @import "blocks/module-form";
 @import "blocks/module-text";
 @import "blocks/module-text-in-columns";

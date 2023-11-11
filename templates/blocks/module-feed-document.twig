@@ -7,7 +7,7 @@
 	{% endif %}
 
     {% if module.posts|length > 0 %}
-		<div class="row">
+		<div class="row feed-document__row">
 			{% for post in module.posts %}
 				 <div class="col-md-6 col-lg-4 feed-document__col">
                     {% include 'blocks/excerpt-document.twig' %}

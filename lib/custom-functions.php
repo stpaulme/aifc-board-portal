@@ -51,8 +51,11 @@ function spm_add_data_to_modules($modules)
     }
 
     foreach ($modules as &$module) {
+        $module['bg_color'] = 'white';
 
         if ($module['acf_fc_layout'] == 'feed_document') {
+            $module['bg_color'] = 'gray';
+
             $selection_choice = $module['selection_choice'];
 
             if ($selection_choice == 'auto') {
