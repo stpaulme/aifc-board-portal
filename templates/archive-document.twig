@@ -9,6 +9,7 @@
         <div class="container">
             {% if options.search_forms.document %}
                 <div class="documents-archive__filters">
+                    <h6>Filter Documents</h6>
                     {% filter shortcodes %}
                         [searchandfilter id="{{ options.search_forms.document }}"]
                     {% endfilter %}
