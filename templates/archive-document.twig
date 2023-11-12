@@ -23,7 +23,7 @@
                 {% endfor %}
             </div>
 
-            {% if posts.pagination.prev or posts.pagination.next %}
+            {% if posts.pagination.next %}
                 <div class="documents-archive__pagination">
                     {% include 'blocks/pagination.twig' %}
                 </div>

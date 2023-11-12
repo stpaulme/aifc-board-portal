@@ -98,3 +98,41 @@ require 'lib/filters.php';
 
 // Custom functions
 require 'lib/custom-functions.php';
+
+function weichie_load_more()
+{
+    $ajaxposts = new WP_Query([
+        'post_type' => 'document',
+        'posts_per_page' => 6,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'paged' => $_POST['paged'],
+    ]);
+
+    $response = '';
+
+    if ($ajaxposts->have_posts()) {
+        while ($ajaxposts->have_posts()): $ajaxposts->the_post();
+            ob_start();
+            echo '<div class="col-md-6 col-lg-4 documents-archive__col">';
+            $context = Timber::context();
+            $context['post'] = new Timber\Post(get_the_ID());
+            $post_type = $context['post']->post_type;
+
+            $templates = array('blocks/excerpt-' . $post_type . '.twig', 'blocks/excerpt.twig');
+
+            Timber::render($templates, $context);
+
+            $response .= ob_get_contents();
+            echo '</div>';
+            ob_end_clean();
+        endwhile;
+    } else {
+        $response = '';
+    }
+
+    echo $response;
+    exit;
+}
+add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
+add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
