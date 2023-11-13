@@ -76,3 +76,15 @@ function spm_filter_post_object_choices_by_template($args, $field, $post_id)
     return $args;
 }
 add_filter('acf/fields/post_object/query', 'spm_filter_post_object_choices_by_template', 10, 3);
+
+function spm_login_logo_url()
+{
+    return home_url();
+}
+add_filter('login_headerurl', 'spm_login_logo_url');
+
+function spm_login_logo_url_title()
+{
+    return get_bloginfo('name');
+}
+add_filter('login_headertext', 'spm_login_logo_url_title');

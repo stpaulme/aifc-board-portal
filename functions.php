@@ -23,6 +23,7 @@ class SPMSite extends Timber\Site {
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_widgets'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue'));
+        add_action('login_enqueue_scripts', array($this, 'enqueue'));
 
         parent::__construct();
     }
