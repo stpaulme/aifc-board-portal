@@ -88,3 +88,14 @@ function spm_login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertext', 'spm_login_logo_url_title');
+
+function spm_replace_howdy($wp_admin_bar)
+{
+    $my_account = $wp_admin_bar->get_node('my-account');
+    $greeting = str_replace('Howdy,', 'Welcome,', $my_account->title);
+    $wp_admin_bar->add_node(array(
+        'id' => 'my-account',
+        'title' => $greeting,
+    ));
+}
+add_filter('admin_bar_menu', 'spm_replace_howdy', 25);
