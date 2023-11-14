@@ -88,3 +88,13 @@ function spm_login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertext', 'spm_login_logo_url_title');
+
+// Make all posts (any post type) private by default
+function wp_118970_force_type_private($post)
+{
+    if ($post['post_status'] != 'trash' && $post['post_status'] != "draft" && $post['post_status'] != "auto-draft") {
+        $post['post_status'] = 'private';
+    }
+    return $post;
+}
+add_filter('wp_insert_post_data', 'wp_118970_force_type_private');
