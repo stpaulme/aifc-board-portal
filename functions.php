@@ -137,3 +137,21 @@ function weichie_load_more()
 }
 add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
 add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+
+// Customize subscriber role
+
+// See private posts
+$role = get_role('subscriber');
+$role->add_cap('read_private_pages');
+$role->add_cap('read_private_posts');
+
+// Redirect to home page on login
+add_filter('login_redirect', 'spm_login_redirect', 10, 3);
+function spm_login_redirect($redirect_to, $request_redirect_to, $user)
+{
+    if (is_a($user, 'WP_User') && $user->has_cap('edit_posts') === false) {
+        return get_bloginfo('siteurl');
+    }
+
+    return $redirect_to;
+}
