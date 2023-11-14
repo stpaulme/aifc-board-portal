@@ -4,6 +4,10 @@
  * Template Name: Meeting
  */
 
+if (!is_user_logged_in()) {
+    auth_redirect();
+}
+
 $context = Timber::get_context();
 $timber_post = new TimberPost();
 
