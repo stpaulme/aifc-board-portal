@@ -98,3 +98,13 @@ function wp_118970_force_type_private($post)
     return $post;
 }
 add_filter('wp_insert_post_data', 'wp_118970_force_type_private');
+
+// Add private/draft/future/pending pages to parent dropdown
+function wps_dropdown_pages_args_add_parents($dropdown_args, $post = null)
+{
+    $dropdown_args['post_status'] = array('publish', 'private');
+    return $dropdown_args;
+}
+
+add_filter('page_attributes_dropdown_pages_args', 'wps_dropdown_pages_args_add_parents', 10, 2);
+add_filter('quick_edit_dropdown_pages_args', 'wps_dropdown_pages_args_add_parents');
