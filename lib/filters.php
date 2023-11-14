@@ -88,23 +88,3 @@ function spm_login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertext', 'spm_login_logo_url_title');
-
-// Make all pages private by default
-function wp_118970_force_type_private($post)
-{
-    if ($post['post_status'] != 'trash' && $post['post_status'] != "draft" && $post['post_status'] != "auto-draft" && $post['post_type'] == "page") {
-        $post['post_status'] = 'private';
-    }
-    return $post;
-}
-add_filter('wp_insert_post_data', 'wp_118970_force_type_private');
-
-// Add private/draft/future/pending pages to parent dropdown
-function wps_dropdown_pages_args_add_parents($dropdown_args, $post = null)
-{
-    $dropdown_args['post_status'] = array('publish', 'private');
-    return $dropdown_args;
-}
-
-add_filter('page_attributes_dropdown_pages_args', 'wps_dropdown_pages_args_add_parents', 10, 2);
-add_filter('quick_edit_dropdown_pages_args', 'wps_dropdown_pages_args_add_parents');
