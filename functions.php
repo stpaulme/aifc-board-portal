@@ -145,12 +145,16 @@ $role = get_role('subscriber');
 $role->add_cap('read_private_pages');
 $role->add_cap('read_private_posts');
 
-// Redirect to home page on login
+// Redirect to homepage or requested page on login
 add_filter('login_redirect', 'spm_login_redirect', 10, 3);
 function spm_login_redirect($redirect_to, $request_redirect_to, $user)
 {
     if (is_a($user, 'WP_User') && $user->has_cap('edit_posts') === false) {
-        return get_bloginfo('siteurl');
+        if (!empty($request_redirect_to) && strpos($request_redirect_to, 'wp-login.php') === false) {
+            return $request_redirect_to;
+        } else {
+            return home_url();
+        }
     }
 
     return $redirect_to;
