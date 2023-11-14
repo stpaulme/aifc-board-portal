@@ -43,11 +43,6 @@
   }
 }
 
-.cta-single+.cta-single,
-.cta-single+.eligibility {
-  padding-top: 0;
-}
-
 @include media-breakpoint-up(md) {
   .cta-single {
     .cta {

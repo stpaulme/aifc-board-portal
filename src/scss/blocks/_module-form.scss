@@ -1,6 +1,4 @@
 .form {
-	padding: 40px 0;
-	
 	.form__heading {
 		border-bottom: 4px solid $gray-border;
 		font-size: 1.625rem;
@@ -12,8 +10,6 @@
 
 @include media-breakpoint-up(md) {
 	.form {
-		padding: 60px 0;
-		
 		.form__heading {
 			font-size: 2rem;
 			line-height: 1.1;

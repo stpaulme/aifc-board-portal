@@ -53,6 +53,18 @@ function spm_add_data_to_modules($modules)
     foreach ($modules as &$module) {
         $module['bg_color'] = 'white';
 
+        if ($module['acf_fc_layout'] == 'board') {
+            $module['bg_color'] = 'gray';
+        }
+
+        if ($module['acf_fc_layout'] == 'cta_pair') {
+            $module['bg_color'] = 'black';
+        }
+
+        if ($module['acf_fc_layout'] == 'cta_group') {
+            $module['bg_color'] = 'gray';
+        }
+
         if ($module['acf_fc_layout'] == 'feed_document') {
             $module['bg_color'] = 'gray';
 
