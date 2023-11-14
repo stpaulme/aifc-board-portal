@@ -89,10 +89,10 @@ function spm_login_logo_url_title()
 }
 add_filter('login_headertext', 'spm_login_logo_url_title');
 
-// Make all posts (any post type) private by default
+// Make all pages private by default
 function wp_118970_force_type_private($post)
 {
-    if ($post['post_status'] != 'trash' && $post['post_status'] != "draft" && $post['post_status'] != "auto-draft") {
+    if ($post['post_status'] != 'trash' && $post['post_status'] != "draft" && $post['post_status'] != "auto-draft" && $post['post_type'] == "page") {
         $post['post_status'] = 'private';
     }
     return $post;
