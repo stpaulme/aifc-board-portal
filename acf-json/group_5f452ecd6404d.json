@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Next Board Meeting",
+            "default_value": "Upcoming Meeting",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -24,10 +24,10 @@
         },
         {
             "key": "field_654d2ee1ba789",
-            "label": "Meeting",
-            "name": "meeting_page_id",
+            "label": "Meeting Details",
+            "name": "",
             "aria-label": "",
-            "type": "post_object",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,17 +36,9 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "message": "Edit the meeting details under Pages -> Upcoming Meeting",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_654d4504d2764",
@@ -87,5 +79,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699562765
+    "modified": 1700067753
 }

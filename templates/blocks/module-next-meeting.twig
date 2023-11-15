@@ -6,15 +6,9 @@
 		<div class="col-md-7 col-lg-8">
 			<h2 class="next-meeting__heading">{{ module.heading }}</h2>
 
-			{% set meeting_page = Post(module.meeting_page_id) %}
-			{% if meeting_page.meta('meeting_date') or meeting_page.meta('meeting_start_time') %}
+			{% set meeting_page = Post(module.upcoming_meeting_id) %}
+			{% if meeting_page.meta('meeting_start_time') %}
 				<span class="next-meeting__date-time">
-					{% if meeting_page.meta('meeting_date') %}
-						{{ meeting_page.meta('meeting_date')|date('M j, Y') }}
-					{% endif %}
-
-					<span class="next-meeting__sep">|</span>
-
 					{% if meeting_page.meta('meeting_start_time') %}
 						{{ meeting_page.meta('meeting_start_time')|date('g:i A') }}
 						{% if meeting_page.meta('meeting_end_time') %}
@@ -24,7 +18,9 @@
 				</span>
 			{% endif %}
 
-			<h3 class="next-meeting__title">{{ meeting_page.title }}</h3>
+			<h3 class="next-meeting__title">
+				{{ meeting_page.meta('meeting_date') }}
+			</h3>
 
 			{% if module.note %}
 				<div class="next-meeting__note">

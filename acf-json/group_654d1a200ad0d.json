@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "date_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -68,7 +68,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "AIFC\r\n579 Wells Street\r\nSt. Paul MN 55130",
             "maxlength": "",
             "rows": 3,
             "placeholder": "",
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699556800
+    "modified": 1700067774
 }

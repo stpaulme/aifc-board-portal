@@ -122,6 +122,12 @@ function spm_add_data_to_modules($modules)
             }
         }
 
+        if ($module['acf_fc_layout'] == 'next_meeting') {
+            $home_url = home_url('/');
+            $upcoming_meeting_slug = 'upcoming-meeting';
+            $upcoming_meeting_id = url_to_postid($home_url . $upcoming_meeting_slug);
+            $module['upcoming_meeting_id'] = $upcoming_meeting_id;
+        }
     }
 
     return $modules;

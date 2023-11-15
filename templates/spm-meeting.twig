@@ -11,14 +11,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-lg-8">
-                        <h2 class="meeting__title">{{ post.title }}</h2>
+                        <h2 class="meeting__title">{{ post.meta('meeting_date') }}</h2>
 
-                        {% if post.meta('meeting_date') or post.meta('meeting_start_time') %}
+                        {% if post.meta('meeting_start_time') %}
                             <div class="meeting__date-time">
-                                {% if post.meta('meeting_date') %}
-                                    <h3 class="meeting__date">{{ post.meta('meeting_date') }}</h3>
-                                {% endif %}
-
                                 {% if post.meta('meeting_start_time') %}
                                     <span class="meeting__time">
                                         {{ post.meta('meeting_start_time')|date('g:i A') }}
