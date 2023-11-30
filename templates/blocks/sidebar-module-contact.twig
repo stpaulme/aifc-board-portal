@@ -2,29 +2,17 @@
 
 {% block content %}
 
-	{% set image = Image(module.image) %}
+	{% set contact_cta = module.contact %}
+	{% set contact_cta_image = Image(contact_cta.image) %}
+	{% set contact_cta_heading = contact_cta.heading %}
+	{% set contact_cta_copy = contact_cta.copy %}
+	{% set contact_cta_name = contact_cta.contact_person.name %}
+	{% set contact_cta_title = contact_cta.contact_person.title %}
+	{% set contact_cta_email = contact_cta.contact_person.email %}
+	{% set contact_cta_phone = contact_cta.contact_person.phone %}
 
-	{% if image.src %}
-		<img alt="" class="sidebar-contact__image" src="{{ image.src('cta_icon') }}">
+	{% if contact_cta|length > 0 %}
+		{% include 'blocks/contact-cta.twig' %}
 	{% endif %}
-
-	<div class="sidebar-contact__content">
-		{% if module.heading %}
-			<h2 class="sidebar-contact__heading">{{ module.heading }}</h2>
-		{% endif %}
-
-		{% if module.copy %}
-			<div class="sidebar-contact__copy">
-				{{ module.copy }}
-			</div>
-		{% endif %}
-
-		{% set contact = module.contact %}
-		{% if contact %}
-			<div class="sidebar-contact__contact">
-				<a href="mailto:{{ contact }}">{{ contact }}</a>
-			</div>
-		{% endif %}
-	</div>
 
 {% endblock %}
