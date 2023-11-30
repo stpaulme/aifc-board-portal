@@ -115,7 +115,7 @@ function weichie_load_more()
     if ($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()): $ajaxposts->the_post();
             ob_start();
-            echo '<div class="col-md-6 col-lg-4 documents-archive__col">';
+            // echo '<div class="col-md-6 col-lg-4 documents-archive__col">';
             $context = Timber::context();
             $context['post'] = new Timber\Post(get_the_ID());
             $post_type = $context['post']->post_type;
@@ -125,8 +125,7 @@ function weichie_load_more()
             Timber::render($templates, $context);
 
             $response .= ob_get_contents();
-            echo '</div>';
-            echo '</div>'; // Add this line to close the nested div tag properly
+            // echo '</div>';
             ob_end_clean();
         endwhile;
     } else {
