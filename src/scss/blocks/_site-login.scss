@@ -75,6 +75,11 @@ body.login div#login p#nav a {
     line-height: 1.125;
     padding: 17px;
     text-align: center;
+
+    &:hover {
+        background-color: $yellow;
+        color: $black;
+    }
 }
 
 body.login div#login p#backtoblog {
