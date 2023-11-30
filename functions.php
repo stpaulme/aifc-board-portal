@@ -115,7 +115,6 @@ function weichie_load_more()
     if ($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()): $ajaxposts->the_post();
             ob_start();
-            // echo '<div class="col-md-6 col-lg-4 documents-archive__col">';
             $context = Timber::context();
             $context['post'] = new Timber\Post(get_the_ID());
             $post_type = $context['post']->post_type;
@@ -125,11 +124,9 @@ function weichie_load_more()
             Timber::render($templates, $context);
 
             $timber_excerpt = ob_get_contents();
-            // echo '</div>';
             ob_end_clean();
 
             $response .= '<div class="col-md-6 col-lg-4 documents-archive__col">' . $timber_excerpt . '</div>';
-
         endwhile;
     } else {
         $response = '';
