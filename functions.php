@@ -104,7 +104,7 @@ function weichie_load_more()
 {
     $ajaxposts = new WP_Query([
         'post_type' => 'document',
-        'posts_per_page' => 6,
+        'posts_per_page' => 9,
         'orderby' => 'date',
         'order' => 'DESC',
         'paged' => $_POST['paged'],
@@ -126,6 +126,7 @@ function weichie_load_more()
 
             $response .= ob_get_contents();
             echo '</div>';
+            echo '</div>'; // Add this line to close the nested div tag properly
             ob_end_clean();
         endwhile;
     } else {
