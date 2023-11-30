@@ -124,9 +124,12 @@ function weichie_load_more()
 
             Timber::render($templates, $context);
 
-            $response .= ob_get_contents();
+            $timber_excerpt = ob_get_contents();
             // echo '</div>';
             ob_end_clean();
+
+            $response .= '<div class="col-md-6 col-lg-4 documents-archive__col">' . $timber_excerpt . '</div>';
+
         endwhile;
     } else {
         $response = '';
