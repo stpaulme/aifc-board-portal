@@ -403,6 +403,15 @@ img {
   > :last-child {
     margin-bottom: 0;
   }
+
+  &--simple {
+    >p:first-child {
+      color: $black;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5625;
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
