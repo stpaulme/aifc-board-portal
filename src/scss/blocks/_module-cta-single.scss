@@ -1,6 +1,4 @@
 .cta-single {
-  padding: 40px 0;
-
   .cta {
     .cta__image-overlay {
       position: relative;
@@ -45,15 +43,8 @@
   }
 }
 
-.cta-single+.cta-single,
-.cta-single+.eligibility {
-  padding-top: 0;
-}
-
 @include media-breakpoint-up(md) {
   .cta-single {
-    padding: 80px 0;
-
     .cta {
       .cta__image {
         margin-bottom: 0;

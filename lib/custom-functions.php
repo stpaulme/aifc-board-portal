@@ -51,101 +51,94 @@ function spm_add_data_to_modules($modules)
     }
 
     foreach ($modules as &$module) {
+        $module['bg_color'] = 'white';
 
-        if ($module['acf_fc_layout'] == 'feed_post') {
-            // Get data from ACF
-            $post_category = $module['post_category'];
-
-            // Add post category to module in Timber
-            if (!empty($post_category)) {
-                $module['post_category'] = new Timber\Term($post_category);
-            }
-
-            // Add posts to module in Timber
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'cat' => $post_category,
-            );
-
-            $module['posts'] = Timber::get_posts($args);
+        if ($module['acf_fc_layout'] == 'board') {
+            $module['bg_color'] = 'gray';
         }
 
-        if ($module['acf_fc_layout'] == 'feed_event') {
-            // Get data from ACF
-            $event_category = $module['event_category'];
-            $max = $module['max'];
+        if ($module['acf_fc_layout'] == 'cta_pair') {
+            $module['bg_color'] = 'black';
+        }
 
-            // Add event category to module in Timber
-            if (!empty($event_category)) {
-                $module['event_category'] = new Timber\Term($event_category, 'tribe_events_cat');
-            }
+        if ($module['acf_fc_layout'] == 'cta_group') {
+            $module['bg_color'] = 'gray';
+        }
 
-            // Add events to module in Timber
-            $args = array(
-                'posts_per_page' => $max,
-                'start_date' => 'now',
-            );
-            if (!empty($event_category)) {
-                $args['tax_query'] = array(
-                    array(
-                        'taxonomy' => 'tribe_events_cat',
-                        'field' => 'term_id',
-                        'terms' => $event_category,
+        if ($module['acf_fc_layout'] == 'feed_document') {
+            $module['bg_color'] = 'gray';
+
+            $selection_choice = $module['selection_choice'];
+
+            if ($selection_choice == 'auto') {
+                // Get data from ACF
+                $year = $module['year'];
+                $month = $module['month'];
+                $category = $module['category'];
+
+                // Add posts to module in Timber
+                $args = array(
+                    'post_type' => 'document',
+                    'posts_per_page' => -1,
+                    'tax_query' => array(
+                        'relation' => 'AND',
                     ),
                 );
+
+                if ($year != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_year',
+                        'field' => 'term_id',
+                        'terms' => $year,
+                    );
+                }
+
+                if ($month != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_month',
+                        'field' => 'term_id',
+                        'terms' => $month,
+                    );
+                }
+
+                if ($category != false) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => 'document_category',
+                        'field' => 'term_id',
+                        'terms' => $category,
+                    );
+                }
+
+                $module['posts'] = Timber::get_posts($args);
+            } else {
+                // Get data from ACF
+                $documents = $module['documents'];
+                $module['posts'] = [];
+
+                foreach ($documents as $post_id) {
+                    $post = new Timber\Post($post_id);
+                    $module['posts'][] = $post;
+                }
             }
-            $events = tribe_get_events($args);
-            if ($events):
-                $module['events'] = new Timber\PostQuery($events, 'Event');
-            endif;
         }
 
+        if ($module['acf_fc_layout'] == 'next_meeting') {
+            $home_url = home_url('/');
+            $upcoming_meeting_slug = 'upcoming-meeting';
+            $upcoming_meeting_id = url_to_postid($home_url . $upcoming_meeting_slug);
+            $module['upcoming_meeting_id'] = $upcoming_meeting_id;
+        }
     }
 
     return $modules;
 
 }
 
-// TEC: Use default events template for single event series
-add_filter(
-    'template_include',
-    function ($template) {
-        if (is_singular('tribe_event_series')) {
-            $template = locate_template('tribe/events/v2/default-template.php');
-        }
-
-        return $template;
-    }
-);
-
-// TEC: Load missing assets on single event series
-function spm_tec_load_missing_assets_on_series()
+function spm_is_acf_date_in_future($field_name)
 {
-    if (is_singular('tribe_event_series')) {
-        // CSS
-        wp_enqueue_style('tribe-events-views-v2-bootstrap-datepicker-styles-css', WP_PLUGIN_URL . '/the-events-calendar/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css');
-        wp_enqueue_style('tribe-common-skeleton-style-css', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/css/common-skeleton.min.css');
-        wp_enqueue_style('tribe-tooltipster-css-css', WP_PLUGIN_URL . '/the-events-calendar/common/vendor/tooltipster/tooltipster.bundle.min.css');
-        wp_enqueue_style('tribe-events-views-v2-skeleton-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-skeleton.min.css');
-        wp_enqueue_style('tribe-common-full-style-css', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/css/common-full.min.css');
-        wp_enqueue_style('tribe-events-views-v2-full-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-full.min.css');
-        wp_enqueue_style('tribe-events-views-v2-print-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-print.min.css');
-        wp_enqueue_style('tribe-events-pro-views-v2-skeleton-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-skeleton.min.css');
-        wp_enqueue_style('tribe-events-pro-views-v2-full-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-full.min.css');
-        wp_enqueue_style('tribe-events-pro-views-v2-print-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-print.min.css');
+    $acf_date = get_field($field_name);
 
-        // JS
-        wp_enqueue_script('tribe-common-js', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/js/tribe-common.min.js', );
-        wp_enqueue_script('tribe-events-views-v2-breakpoints-js', WP_PLUGIN_URL . '/the-events-calendar/src/resources/js/views/breakpoints.min.js', array('jquery'), );
-    }
+    $current_date = date('Y-m-d H:i:s');
+
+    return strtotime($acf_date) > strtotime($current_date);
 }
-add_action('wp_enqueue_scripts', 'spm_tec_load_missing_assets_on_series');
-
-// TEC: Force list view on single event series
-add_filter(
-    'tec_events_pro_custom_tables_v1_series_event_view_slug',
-    function ($view) {
-        return 'list';
-    }
-);

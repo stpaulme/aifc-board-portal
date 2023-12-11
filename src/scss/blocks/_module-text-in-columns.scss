@@ -1,0 +1,39 @@
+.text-in-columns {
+    &__heading {
+        border-bottom: 5px solid $gray-border;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    &__col {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .text-in-columns {
+        &__heading {
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .text-in-columns {
+        &__heading {
+            font-size: 2.25rem;
+            line-height: 1.0555;
+        }
+
+        &__col {
+            margin-bottom: 0;
+        }
+    }
+}

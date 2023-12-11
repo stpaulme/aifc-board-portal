@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block page_title %}
+    {% include 'blocks/title-landing.twig' %}
+{% endblock %}
+
+{% block content %}
+    <div class="documents-archive">
+        <div class="container">
+            {% if options.search_forms.document %}
+                <div class="documents-archive__filters">
+                    <h6>Filter Documents</h6>
+                    {% filter shortcodes %}
+                        [searchandfilter id="{{ options.search_forms.document }}"]
+                    {% endfilter %}
+                </div>
+            {% endif %}
+
+            <div class="row documents-archive__row">
+                {% for post in posts %}
+                    <div class="col-md-6 col-lg-4 documents-archive__col">
+                        {% include 'blocks/excerpt-document.twig' %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if posts.pagination.next %}
+                <div class="documents-archive__pagination">
+                    {% include 'blocks/pagination.twig' %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

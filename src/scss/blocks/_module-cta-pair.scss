@@ -1,5 +1,4 @@
 .cta-pair {
-  padding: 40px 0;
   background-color: $black;
   color: $white;
 
@@ -8,7 +7,7 @@
     line-height: 1.15;
     margin-bottom: 30px;
   }
-  
+
   .cta-pair__col {
     margin-bottom: 25px;
 
@@ -21,13 +20,13 @@
 @include media-breakpoint-up(md) {
   .cta-pair {
     padding: 0;
-    
+
     .container {
       background-image: url(../../dist/img/pattern_vertical.png);
       background-position: top right 15px;
       background-repeat: no-repeat;
       background-size: 75px;
-      padding: 60px 0;
+      padding: 40px 0;
     }
 
     .cta-pair__heading {

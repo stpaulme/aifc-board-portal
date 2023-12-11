@@ -1,0 +1,100 @@
+body.login {
+    background-color: $black;
+    background-image: url('../../dist/img/pattern_horizontal.png');
+    background-position: bottom 30px left;
+    background-repeat: repeat-x;
+    background-size: 184px 41px;
+    padding-bottom: 100px;
+}
+
+body.login div#login h1 a {
+    background-image: url('../../dist/img/aifc_logo.svg');
+    height: 128px;
+    width: 100px;
+    background-size: cover;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+    }
+}
+
+body.login div#login form {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+body.login div#login label {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.125;
+    margin-bottom: 8px;
+}
+
+body.login div#login input#user_login,
+body.login div#login input#user_pass {
+    appearance: none;
+    background-color: $white;
+    border: 1px solid $black;
+    border-radius: 5px;
+    color: $black;
+    font-size: 1rem;
+    line-height: 1.1875;
+    padding: 12px;
+    width: 100%;
+
+    &:focus {
+        outline-color: $red;
+    }
+}
+
+body.login div#login p.forgetmenot label {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+body.login div#login p.submit input#wp-submit {
+    @extend .button;
+
+    min-height: unset;
+    margin-bottom: 0;
+}
+
+body.login div#login p#nav {
+    padding: 0;
+}
+
+body.login div#login p#nav a {
+    background-color: $white;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    color: $red;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.125;
+    padding: 17px;
+    text-align: center;
+
+    &:hover {
+        background-color: $yellow;
+        color: $black;
+    }
+}
+
+body.login div#login p#backtoblog {
+    display: none;
+}
+
+body.login .message {
+    border-left: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+@include media-breakpoint-up(md) {
+    body.login div#login h1 a {
+        height: 199px;
+        width: 156px;
+    }
+}

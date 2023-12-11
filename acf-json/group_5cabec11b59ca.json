@@ -6,6 +6,7 @@
             "key": "field_5f9051d158407",
             "label": "Image",
             "name": "image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -30,6 +31,7 @@
             "key": "field_5f2048078d383",
             "label": "Heading",
             "name": "heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -49,6 +51,7 @@
             "key": "field_5f2048198d384",
             "label": "Copy",
             "name": "copy",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "Optional",
             "required": 0,
@@ -68,7 +71,8 @@
             "key": "field_5cabec1751ddb",
             "label": "Contact",
             "name": "contact",
-            "type": "post_object",
+            "aria-label": "",
+            "type": "email",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -77,14 +81,10 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "staff"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -104,5 +104,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1603293666
+    "show_in_rest": 0,
+    "modified": 1699479148
 }

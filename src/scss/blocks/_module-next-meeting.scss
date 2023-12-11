@@ -1,0 +1,89 @@
+.next-meeting {
+    &__heading {
+        border-bottom: 5px solid $gray-border;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    &__date-time {
+        display: block;
+        line-height: 1.0625;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+
+    &__sep {
+        color: #d0d0d0;
+    }
+
+    &__title {
+        font-size: 1.3125rem;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+
+    &__note {
+        font-style: italic;
+        font-weight: 500;
+        margin-top: 8px;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    &__agenda+&__permalink {
+        margin-top: 20px;
+    }
+
+    &__contact-cta {
+        margin-top: 30px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .next-meeting {
+        &__heading {
+            font-size: 2rem;
+            line-height: 1.09375;
+            margin-bottom: 20px;
+        }
+
+        &__title {
+            font-size: 1.5rem;
+            line-height: 1.125;
+        }
+
+        &__links {
+            align-items: center;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        &__agenda+&__permalink {
+            margin-top: 0;
+            margin-left: 20px;
+        }
+
+        &__contact-cta {
+            margin-top: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .next-meeting {
+        &__heading {
+            font-size: 2.25rem;
+            line-height: 1.0556;
+        }
+
+        &__links {
+            margin-top: 25px;
+        }
+    }
+}

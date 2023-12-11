@@ -1,0 +1,45 @@
+.feed-document {
+    background-color: #F6F6F6;
+
+    &__heading {
+        border-bottom: 4px solid $gray-border;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    &__row {
+        margin-bottom: -25px;
+    }
+
+    &__col {
+        margin-bottom: 25px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .feed-document {
+        &__heading {
+            font-size: 2.25rem;
+            line-height: 1.055555556;
+            margin-bottom: 25px;
+        }
+
+        &__row {
+            margin-bottom: -30px;
+        }
+
+        &__col {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .feed-document {
+        &__heading {
+            margin-bottom: 35px;
+        }
+    }
+}

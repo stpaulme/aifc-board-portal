@@ -1,0 +1,49 @@
+.documents-archive {
+    background-color: #F6F6F6;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    &__filters {
+        margin-bottom: 25px;
+
+        h6 {
+            font-weight: 700;
+            line-height: 1.125;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__row {
+        margin-bottom: -25px;
+    }
+
+
+    &__col {
+        margin-bottom: 25px;
+    }
+
+    &__pagination {
+        margin-top: 25px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .documents-archive {
+        &__filters {
+            margin-bottom: 30px;
+        }
+
+        &__row {
+            margin-bottom: -30px;
+        }
+
+
+        &__col {
+            margin-bottom: 30px;
+        }
+
+        &__pagination {
+            margin-top: 30px;
+        }
+    }
+}

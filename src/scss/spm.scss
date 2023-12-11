@@ -164,7 +164,7 @@ img {
     background-color: $white;
     border-bottom: 8px solid $black;
     border-radius: 5px;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
     margin-bottom: 30px;
 
     h2 {
@@ -219,13 +219,12 @@ img {
 }
 
 .module {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
-@include media-breakpoint-up(md) {
-  .module {
-    padding: 40px 0;
-  }
+.module--bg-gray+.module--bg-gray,
+.module--bg-white+.module--bg-white {
+  padding-top: 0;
 }
 
 .module--sidebar {
@@ -288,7 +287,7 @@ img {
     font-size: 2rem;
     line-height: 1.1;
   }
-  
+
   .module-subheading {
     font-size: 1.3125rem;
     line-height: 1.25;
@@ -300,7 +299,7 @@ img {
     font-size: 2.25rem;
     line-height: 1.0556;
   }
-  
+
   .module-subheading {
     font-size: 1.5rem;
     line-height: 1.125;
@@ -310,7 +309,10 @@ img {
 .wysiwyg {
   line-height: 1.5625;
 
-  blockquote, ol, p, ul {
+  blockquote,
+  ol,
+  p,
+  ul {
     margin-bottom: 20px;
   }
 
@@ -348,15 +350,27 @@ img {
     margin-bottom: 8px;
   }
 
-  blockquote + h2, figure + h2, ol + h2, p + h2, ul + h2 {
+  blockquote+h2,
+  figure+h2,
+  ol+h2,
+  p+h2,
+  ul+h2 {
     padding-top: 20px;
   }
 
-  blockquote + h3, figure + h3, ol + h3, p + h3, ul + h3 {
+  blockquote+h3,
+  figure+h3,
+  ol+h3,
+  p+h3,
+  ul+h3 {
     padding-top: 5px;
   }
 
-  blockquote + h4, figure + h4, ol + h4, p + h4, ul + h4 {
+  blockquote+h4,
+  figure+h4,
+  ol+h4,
+  p+h4,
+  ul+h4 {
     padding-top: 5px;
   }
 
@@ -368,16 +382,18 @@ img {
     }
   }
 
-  li ol, li ul {
+  li ol,
+  li ul {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
-  p + ol, p + ul {
+  p+ol,
+  p+ul {
     margin-top: -12px;
   }
 
-  > p:first-child {
+  >p:first-child {
     color: $blue;
     font-size: 1.3125rem;
     font-weight: 700;
@@ -387,6 +403,15 @@ img {
   > :last-child {
     margin-bottom: 0;
   }
+
+  &--simple {
+    >p:first-child {
+      color: $black;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5625;
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -394,13 +419,17 @@ img {
     blockquote {
       padding: 30px;
     }
-  
+
     h2 {
       font-size: 1.6875rem;
       line-height: 1.1;
     }
-  
-    blockquote + h2, figure + h2, ol + h2, p + h2, ul + h2 {
+
+    blockquote+h2,
+    figure+h2,
+    ol+h2,
+    p+h2,
+    ul+h2 {
       padding-top: 15px;
     }
   }
@@ -414,49 +443,57 @@ img {
   }
 }
 
-@import "wp.scss";
-@import "ecp.scss";
-@import "er.scss";
-@import "gf.scss";
+@import "wp";
+@import "er";
+@import "gf";
+@import "saf";
 
-@import "blocks/breadcrumbs.scss";
-@import "blocks/cta.scss";
-@import "blocks/error-404.scss";
-@import "blocks/excerpt.scss";
-@import "blocks/hero.scss";
-@import "blocks/individual-post.scss";
-@import "blocks/individual-staff.scss";
-@import "blocks/member.scss";
-@import "blocks/module-cta-group.scss";
-@import "blocks/module-cta-pair.scss";
-@import "blocks/module-cta-single.scss";
-@import "blocks/module-eligibility.scss";
-@import "blocks/module-embed.scss";
-@import "blocks/module-emergency-contact-info.scss";
-@import "blocks/module-form.scss";
-@import "blocks/module-image-grid.scss";
-@import "blocks/module-intro.scss";
-@import "blocks/module-feed-event.scss";
-@import "blocks/module-feed-post.scss";
-@import "blocks/module-map.scss";
-@import "blocks/module-team.scss";
-@import "blocks/module-testimonial.scss";
-@import "blocks/module-text.scss";
-@import "blocks/module-vol-ops.scss";
-@import "blocks/nav.scss";
-@import "blocks/newsletter-signup.scss";
-@import "blocks/pagination.scss";
-@import "blocks/posts-index.scss";
-@import "blocks/search.scss";
-@import "blocks/search-page.scss";
-@import "blocks/sidebar-nav.scss";
-@import "blocks/sidebar-module-cta-single.scss";
-@import "blocks/sidebar-module-contact.scss";
-@import "blocks/sidebar-module-eligibility.scss";
-@import "blocks/site-announcement.scss";
-@import "blocks/site-header.scss";
-@import "blocks/site-footer.scss";
-@import "blocks/sub-nav.scss";
-@import "blocks/title-landing.scss";
-@import "blocks/title-page.scss";
-@import "blocks/vol-op.scss";
+@import "blocks/breadcrumbs";
+@import "blocks/cta";
+@import "blocks/contact-cta";
+@import "blocks/documents-archive";
+@import "blocks/error-404";
+@import "blocks/excerpt";
+@import "blocks/individual-post";
+@import "blocks/individual-staff";
+@import "blocks/member";
+@import "blocks/module-board";
+@import "blocks/module-cta-group";
+@import "blocks/module-cta-pair";
+@import "blocks/module-cta-single";
+@import "blocks/module-meeting";
+@import "blocks/module-next-meeting";
+@import "blocks/module-feed-document";
+@import "blocks/module-form";
+@import "blocks/module-text";
+@import "blocks/module-text-in-columns";
+@import "blocks/nav";
+@import "blocks/newsletter-signup";
+@import "blocks/pagination";
+@import "blocks/posts-index";
+@import "blocks/search";
+@import "blocks/search-page";
+@import "blocks/sidebar-nav";
+@import "blocks/sidebar-module-cta-single";
+@import "blocks/sidebar-module-contact";
+@import "blocks/sidebar-module-eligibility";
+@import "blocks/site-announcement";
+@import "blocks/site-header";
+@import "blocks/site-login";
+@import "blocks/site-footer";
+@import "blocks/sub-nav";
+@import "blocks/title-landing";
+@import "blocks/title-page";
+@import "blocks/vol-op";
+
+.mm-listview {
+  .mm-listitem {
+    a {
+      &.button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{% extends 'blocks/module.twig' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="col-md-7 col-lg-8">
+			<h2 class="next-meeting__heading">{{ module.heading }}</h2>
+
+			{% set meeting_page = Post(module.upcoming_meeting_id) %}
+			{% if meeting_page.meta('meeting_start_time') %}
+				<span class="next-meeting__date-time">
+					{% if meeting_page.meta('meeting_start_time') %}
+						{{ meeting_page.meta('meeting_start_time')|date('g:i A') }}
+						{% if meeting_page.meta('meeting_end_time') %}
+						&ndash; {{ meeting_page.meta('meeting_end_time') }}
+						{% endif %}
+					{% endif %}
+				</span>
+			{% endif %}
+
+			<h3 class="next-meeting__title">
+				{{ meeting_page.meta('meeting_date') }}
+			</h3>
+
+			{% if module.note %}
+				<div class="next-meeting__note">
+					{{ module.note }}
+				</div>
+			{% endif %}
+
+			<div class="next-meeting__links">
+				{% set agenda_link = meeting_page.meta('meeting_agenda') %}
+				{% if agenda_link %}
+					<div class="next-meeting__agenda">
+						<a class="button" href="{{ agenda_link }}" download>Meeting Agenda</a>
+					</div>
+				{% endif %}
+
+				<div class="next-meeting__permalink">
+					<a href="{{ meeting_page.link }}">Meeting Details <span aria-hidden="true">&raquo;</span></a>
+				</div>
+			</div>
+
+			
+			
+				
+		
+		</div>
+
+		{% set contact_cta = meeting_page.meta('contact_cta') %}
+		{% set contact_cta_image = Image(contact_cta.image) %}
+		{% set contact_cta_heading = contact_cta.heading %}
+		{% set contact_cta_copy = contact_cta.copy %}
+		{% set contact_cta_name = contact_cta.contact_person.name %}
+		{% set contact_cta_title = contact_cta.contact_person.title %}
+		{% set contact_cta_email = contact_cta.contact_person.email %}
+		{% set contact_cta_phone = contact_cta.contact_person.phone %}
+
+		{% if contact_cta|length > 0 %}
+			<div class="col-md-5 col-lg-4">
+				<div class="next-meeting__contact-cta">
+					{% include 'blocks/contact-cta.twig' %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}
