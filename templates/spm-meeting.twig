@@ -87,8 +87,8 @@
     {% block below %}
         {% for module in below %}
 
-            {% set module_name = module.acf_fc_layout|replace('_', '-') %}
-            {% set module_style = module.style|replace('_', '-') %}
+            {% set module_name = module.acf_fc_layout|replace({'_': '-'}) %}
+            {% set module_style = module.style|replace({'_': '-'}) %}
 
             {% include ['blocks/module-' ~ module_name ~ '.twig', 'blocks/module.twig'] %}
 

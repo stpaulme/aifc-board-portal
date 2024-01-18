@@ -1,5 +1,10 @@
 <?php
 
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
+
+$timber = new Timber\Timber();
+
 if (!class_exists('Timber')) {
     add_action(
         'admin_notices',
